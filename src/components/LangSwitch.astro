@@ -1,0 +1,21 @@
+---
+import { altPath, t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const target = dict.langSwitch.target;
+const href = altPath(Astro.url.pathname, target);
+---
+
+<a
+  href={href}
+  hreflang={target === 'en' ? 'en' : 'uk'}
+  aria-label={dict.langSwitch.full}
+  title={dict.langSwitch.full}
+  class="inline-flex items-center rounded-full border border-line bg-card px-3.5 py-2 text-sm font-semibold text-muted transition-colors hover:border-accent hover:text-accent"
+  >{dict.langSwitch.short}</a
+>

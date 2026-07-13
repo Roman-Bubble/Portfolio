@@ -1,0 +1,32 @@
+---
+import { t, type Lang } from '../i18n';
+import Layout from '../layouts/Layout.astro';
+import Hero from './sections/Hero.astro';
+import Cases from './sections/Cases.astro';
+import Offer from './sections/Offer.astro';
+import Process from './sections/Process.astro';
+import Testimonials from './sections/Testimonials.astro';
+import Faq from './sections/Faq.astro';
+import About from './sections/About.astro';
+import FinalCta from './sections/FinalCta.astro';
+import StickyCta from '../components/StickyCta.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<Layout lang={lang} title={dict.meta.title} description={dict.meta.description}>
+  <Hero lang={lang} />
+  <Cases lang={lang} />
+  <Offer lang={lang} />
+  <Process lang={lang} />
+  <Testimonials lang={lang} />
+  <Faq lang={lang} />
+  <About lang={lang} />
+  <FinalCta lang={lang} />
+  <StickyCta lang={lang} />
+</Layout>

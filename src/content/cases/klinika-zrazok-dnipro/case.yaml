@@ -1,0 +1,55 @@
+# ЗРАЗОК КЕЙСУ (демо). sample: true, показуємо як приклад підходу, без вигаданого відгуку.
+# Коли зʼявиться справжній клієнт: скопіюйте _template, заповніть, і видаліть цей зразок.
+
+published: true
+sample: true
+order: 3
+
+business:
+  name: 'Стоматологія «Зразок»'
+  niche: { ua: 'Стоматологія', en: 'Dental clinic' }
+  city: { ua: 'Дніпро', en: 'Dnipro' }
+
+liveUrl: 'https://example.com'
+
+owner:
+  name: 'Олег'
+  photo: './owner.svg'
+
+cover: './cover.svg'
+gallery: []
+
+problem:
+  ua: |
+    Клініка нова, крісла стояли напівпорожні. Реклама вела на сторінку
+    в соцмережі, де людина не знаходила ні лікарів, ні цін, і не
+    наважувалась подзвонити. Пацієнти йшли до клінік «з нормальним
+    сайтом», навіть якщо там дорожче.
+  en: |
+    A new clinic with half-empty chairs. Ads led to a social media page
+    where people found neither the doctors nor the prices, and never
+    worked up the nerve to call. Patients went to clinics "with a proper
+    website", even when those were more expensive.
+
+solution:
+  ua: |
+    Людина боїться стоматолога, а не шукає «послуги стоматології». Тому
+    сайт знімає страх: лікарі з іменами і фото, чесні ціни до візиту,
+    відповіді на «чи буде боляче» і «скільки це коштує». Кнопка одна:
+    записатися на огляд.
+  en: |
+    People fear the dentist; they are not shopping for "dental services".
+    So the site disarms the fear: doctors with names and faces, honest
+    prices before the visit, answers to "will it hurt" and "what will it
+    cost". One button: book a check-up.
+
+result:
+  ua: 'Ціль сайта: пацієнт наважується подзвонити, а не йде до сусідів'
+  en: 'The goal of the site: the patient works up the nerve to call'
+
+testimonial:
+  quote:
+    ua: ''
+    en: ''
+  originalLang: ua
+  video: ''

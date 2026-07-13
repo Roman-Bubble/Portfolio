@@ -1,0 +1,46 @@
+# ШАБЛОН КЕЙСУ. Скопіюйте папку _template, перейменуйте (латиницею-через-дефіс),
+# заповніть поля і покладіть фото поруч. Детальніше — у README.md поверхом вище.
+
+published: true
+order: 99 # порядок на головній: 1 — перший
+
+business:
+  name: 'Назва бізнесу'
+  niche: { ua: 'Ніша українською', en: 'Niche in English' }
+  city: { ua: 'Місто', en: 'City' }
+
+liveUrl: 'https://example.com' # жива сторінка, яку ви зробили
+
+owner:
+  name: "Ім'я власника"
+  photo: './owner.svg' # замініть на ./owner.jpg
+
+cover: './cover.svg' # замініть на ./cover.jpg
+gallery: [] # додаткові фото: ['./photo-1.jpg', './photo-2.jpg']
+
+problem:
+  ua: |
+    З чим прийшов бізнес. 2–4 речення про ситуацію ДО:
+    звідки брались клієнти, що не працювало, що боліло.
+  en: |
+    Where the business started. 2–4 sentences about the BEFORE:
+    where customers came from, what wasn't working, what hurt.
+
+solution:
+  ua: |
+    Що ви зробили і чому саме так. Хід думки, а не список фіч.
+  en: |
+    What you did and why. The thinking, not a feature list.
+
+result:
+  ua: '«Результат словами власника, одним рядком»'
+  en: '“The result in the owner’s words, one line”'
+
+testimonial:
+  quote:
+    ua: |
+      Повна цитата власника про роботу з вами і про результат.
+    en: |
+      The full owner quote about working with you and the result.
+  originalLang: ua
+  video: '' # YouTube ID або порожньо

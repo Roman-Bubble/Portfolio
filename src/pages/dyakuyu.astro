@@ -1,0 +1,19 @@
+---
+import { t } from '../i18n';
+import Layout from '../layouts/Layout.astro';
+
+const dict = t('uk');
+---
+
+<Layout lang="uk" title={dict.thanks.metaTitle} description={dict.thanks.text} noIndex>
+  <section class="mx-auto flex w-full max-w-2xl flex-col items-center px-5 py-24 text-center md:py-32">
+    <p class="text-5xl" aria-hidden="true">🤝</p>
+    <h1 class="mt-6 text-h2 font-bold tracking-tight">{dict.thanks.title}</h1>
+    <p class="mt-4 text-lead text-muted">{dict.thanks.text}</p>
+    <a
+      href="/"
+      class="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 font-medium text-white transition-colors hover:bg-accent-deep"
+      >{dict.thanks.back}</a
+    >
+  </section>
+</Layout>

@@ -1,0 +1,105 @@
+---
+import { SITE } from '../../site.config.mjs';
+import { t, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<section id="offer" class="relative scroll-mt-24 overflow-hidden bg-accent-soft">
+  <div
+    aria-hidden="true"
+    class="glow-brass pointer-events-none absolute -top-24 right-[-10%] h-[32rem] w-[32rem] rounded-full opacity-30"
+  >
+  </div>
+
+  <div class="relative mx-auto w-full max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <div class="max-w-2xl">
+      <span class="kicker reveal">{dict.offer.kicker}</span>
+      <h2 class="reveal mt-4 text-h2 font-bold text-balance">{dict.offer.title}</h2>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-[1.7fr_1fr] lg:gap-8">
+      <div
+        class="reveal relative overflow-hidden rounded-[1.75rem] border border-line bg-card shadow-[var(--shadow-lift)]"
+      >
+        <div
+          aria-hidden="true"
+          class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brass/70 to-transparent"
+        >
+        </div>
+
+        <div class="p-8 md:p-11">
+          <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-5">
+            <h3 class="max-w-[16rem] text-h3 leading-tight font-semibold">{dict.offer.name}</h3>
+            <div class="text-left sm:text-right">
+              <p class="text-xs font-medium tracking-[0.14em] text-muted uppercase">{dict.offer.priceLabel}</p>
+              <p class="mt-1.5 font-display text-[2.25rem] leading-none font-bold text-accent md:text-[2.6rem]">{dict.offer.price}</p>
+              <p class="mt-2 text-sm text-muted">{dict.offer.priceMeta}</p>
+            </div>
+          </div>
+
+          <p class="mt-8 border-l-2 border-brass/50 pl-5 text-lead leading-relaxed text-ink/85">
+            {dict.offer.scope}
+          </p>
+
+          <p class="mt-10 flex items-center gap-3 text-xs font-medium tracking-[0.16em] text-muted uppercase">
+            {dict.offer.includes}
+            <span class="h-px flex-1 bg-line"></span>
+          </p>
+
+          <ul data-stagger="60" class="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2">
+            {
+              dict.offer.bullets.map((item) => (
+                <li class="reveal flex gap-3">
+                  <svg viewBox="0 0 24 24" class="mt-1 h-[18px] w-[18px] shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  <span class="leading-relaxed text-ink/90">{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <div class="mt-10 grid gap-5 border-t border-line pt-7">
+            <div>
+              <p class="font-medium">{dict.offer.time}</p>
+              <p class="mt-1 text-sm text-muted">{dict.offer.timeCaveat}</p>
+            </div>
+            <p class="text-sm text-muted">{dict.offer.priceNote}</p>
+            <p class="flex items-start gap-2.5 text-sm text-muted">
+              <svg viewBox="0 0 24 24" class="mt-0.5 h-[18px] w-[18px] shrink-0 text-brass" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              {dict.offer.guarantee}
+            </p>
+          </div>
+
+          <div class="mt-9">
+            <a href={SITE.telegram} class="btn btn-primary w-full px-8 py-4 sm:w-auto">
+              {dict.offer.cta}
+              <span aria-hidden="true" class="btn-arrow">→</span>
+            </a>
+            <p class="mt-3.5 text-sm text-muted">{dict.hero.trust}</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="reveal flex flex-col self-start rounded-[1.75rem] border border-line bg-card/50 p-8 md:p-9"
+        style="--d:120ms"
+      >
+        <h3 class="text-h3 font-semibold">{dict.offer.care.title}</h3>
+        <p class="mt-4 leading-relaxed text-muted">{dict.offer.care.text}</p>
+        <div class="mt-auto pt-8">
+          <p class="font-display text-xl font-bold">{dict.offer.care.price}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

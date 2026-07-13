@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import CaseArticle from '../../../components/CaseArticle.astro';
+
+export async function getStaticPaths() {
+  const cases = await getCollection('cases', ({ data }) => data.published);
+  return cases.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<CaseArticle lang="en" entry={entry} />

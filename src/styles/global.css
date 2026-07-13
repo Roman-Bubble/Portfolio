@@ -1,0 +1,351 @@
+@import 'tailwindcss';
+
+/* Fixel by MacPaw (SIL OFL), self-hosted. Display cut for headings, Text cut for body. */
+@font-face {
+  font-family: 'Fixel Display';
+  src: url('/fonts/FixelDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Display';
+  src: url('/fonts/FixelDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('/fonts/FixelText-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('/fonts/FixelText-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Палітра: тепле чорнило на папері, глибока ялина, латунь дозовано */
+  --color-bg: #f6f1e7; /* Папір: тепла слонова кістка */
+  --color-bg-warm: #f1e9da; /* Тепліший тон для градієнтів */
+  --color-surface: #fffdf8; /* Тепло-білий для карток */
+  --color-card: #fffdf8;
+  --color-ink: #17201a; /* Чорнило: зелено-чорний */
+  --color-ink-deep: #0a110d; /* Майже чорний для найтемніших секцій */
+  --color-muted: #566159; /* Камінь: другорядний текст (контраст 5.6:1) */
+  --color-accent: #0f4634; /* Ялина: єдиний насичений акцент */
+  --color-accent-deep: #0a2f24; /* Смерека: hover і темні секції */
+  --color-accent-soft: #e9e2d3; /* Тепла нейтраль */
+  --color-brass: #9a7526; /* Латунь: акцентна деталь */
+  --color-brass-soft: #c4a24e; /* Світліша латунь для тексту на темному */
+  --color-line: #e6ded0;
+
+  /* Дисплейний різ Fixel для заголовків, текстовий різ для тіла */
+  --font-display: 'Fixel Display', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+  --font-sans: 'Fixel Text', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Типографічна шкала (mobile → desktop через clamp) */
+  --text-h1: clamp(2.5rem, 1.55rem + 4.2vw, 4.25rem); /* 40 → 68 */
+  --text-h1--line-height: 1.03;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(1.875rem, 1.4rem + 2.1vw, 2.75rem); /* 30 → 44 */
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h3: clamp(1.25rem, 1.16rem + 0.4vw, 1.5rem); /* 20 → 24 */
+  --text-h3--line-height: 1.18;
+  --text-h3--letter-spacing: -0.01em;
+  --text-lead: clamp(1.125rem, 1.04rem + 0.4vw, 1.3125rem); /* 18 → 21 */
+  --text-lead--line-height: 1.5;
+  --text-body: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem); /* 16 → 17 */
+  --text-body--line-height: 1.65;
+
+  /* Преміум-тіні: м'які, з зеленим підтоном */
+  --shadow-card: 0 1px 2px rgba(23, 32, 26, 0.04), 0 12px 28px -18px rgba(15, 70, 52, 0.28);
+  --shadow-lift: 0 2px 6px rgba(23, 32, 26, 0.06), 0 28px 56px -28px rgba(15, 70, 52, 0.42);
+  --shadow-portrait: 0 40px 80px -40px rgba(10, 47, 36, 0.55);
+}
+
+:root {
+  /* Плавні easing-криві для преміум-руху */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Легка плівкова зернистість (SVG-шум, вбудований) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Тонка плівкова зернистість поверх усього (дуже делікатно) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: 140px 140px;
+  opacity: 0.03;
+  mix-blend-mode: multiply;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@layer components {
+/* ---------- Декоративні шари ---------- */
+
+/* Сітка з крапок (низька непрозорість) */
+.dotgrid {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-ink) 42%, transparent) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+/* М'яке радіальне сяйво (кладемо у декоративний шар) */
+.glow-brass {
+  background: radial-gradient(60% 60% at 50% 30%, color-mix(in srgb, var(--color-brass) 26%, transparent), transparent 70%);
+}
+.glow-accent {
+  background: radial-gradient(55% 55% at 50% 40%, color-mix(in srgb, var(--color-accent) 34%, transparent), transparent 72%);
+}
+
+/* ---------- Типографічні деталі ---------- */
+
+/* Kicker / надзаголовок з латунною рискою */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+.kicker::before {
+  content: '';
+  width: 1.75rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+/* Латунний підкреслений вислів */
+.brass-underline {
+  background-image: linear-gradient(transparent 60%, color-mix(in srgb, var(--color-brass) 30%, transparent) 60%);
+  padding-inline: 0.04em;
+}
+
+/* ---------- Кнопки ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out),
+    background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+.btn-arrow {
+  transition: transform 0.25s var(--ease-out);
+}
+.btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent) 92%, white), var(--color-accent));
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(10, 47, 36, 0.2), 0 14px 28px -14px rgba(10, 47, 36, 0.6);
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-deep));
+  box-shadow: 0 2px 4px rgba(10, 47, 36, 0.24), 0 20px 40px -16px rgba(10, 47, 36, 0.7);
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--color-accent);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 16px 34px -18px rgba(0, 0, 0, 0.5);
+}
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 24px 44px -18px rgba(0, 0, 0, 0.55);
+}
+.btn-light:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  color: var(--color-ink);
+}
+.btn-ghost:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-line));
+  color: var(--color-accent);
+}
+
+/* ---------- Скляна шапка ---------- */
+.glass {
+  background: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+}
+
+/* ---------- Індикатор прогресу скролу ---------- */
+.scroll-progress {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.scroll-progress__bar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(var(--scrollp, 0));
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent) 62%, var(--color-brass) 100%);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--color-brass) 30%, transparent);
+  will-change: transform;
+}
+
+/* ---------- Картка-сповіщення "вхідний клієнт" ---------- */
+.notif {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--color-line) 80%, white);
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 0.6rem 0.85rem;
+  box-shadow: var(--shadow-card);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+.notif::before {
+  content: '';
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--color-brass);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brass) 22%, transparent);
+}
+
+/* ---------- Преміум-панель портрета ---------- */
+.portrait-panel {
+  background:
+    radial-gradient(90% 60% at 50% 8%, color-mix(in srgb, var(--color-brass) 20%, transparent), transparent 60%),
+    linear-gradient(168deg, #efe6d4 0%, #e7dcc6 55%, #dccfb4 100%);
+}
+
+/* ---------- Акордеон FAQ (плавне розкриття) ---------- */
+.faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-out);
+}
+.faq-body > div {
+  overflow: hidden;
+}
+details[open] .faq-body {
+  grid-template-rows: 1fr;
+}
+}
+
+/* ---------- Рух: поява під час скролу ---------- */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease-out-soft), transform 0.7s var(--ease-out-soft);
+  transition-delay: var(--d, 0ms);
+  will-change: transform, opacity;
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Легке "спливання" карток-сповіщень (делікатно, вимикається reduced-motion) */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+html.js .float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+html.js .float-soft-slow {
+  animation: float-soft 7.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html.js .float-soft,
+  html.js .float-soft-slow {
+    animation: none;
+  }
+  .btn,
+  .btn-arrow {
+    transition: none;
+  }
+}

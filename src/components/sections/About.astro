@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import { SITE } from '../../site.config.mjs';
+import { t, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const fullName = lang === 'en' ? `${SITE.nameEn} ${SITE.surnameEn}` : `${SITE.name} ${SITE.surname}`;
+
+const photos = import.meta.glob<{ default: ImageMetadata }>(
+  '../../assets/roman.{jpg,jpeg,png,webp,svg}',
+  { eager: true },
+);
+const photo = Object.values(photos)[0]?.default;
+---
+
+<section id="about" class="mx-auto w-full max-w-4xl scroll-mt-24 px-5 pb-20 md:px-8 md:pb-28">
+  <div
+    class="reveal relative overflow-hidden rounded-[1.75rem] border border-line bg-card p-8 shadow-[var(--shadow-card)] md:p-12"
+  >
+    <div
+      aria-hidden="true"
+      class="glow-brass pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full opacity-50"
+    >
+    </div>
+
+    <div class="relative grid gap-8 md:grid-cols-[auto_1fr] md:items-start md:gap-10">
+      {
+        photo && (
+          <div class="portrait-panel relative aspect-4/5 w-36 shrink-0 overflow-hidden rounded-2xl shadow-[var(--shadow-card)] ring-1 ring-ink/10 sm:w-44">
+            <div
+              aria-hidden="true"
+              class="absolute inset-0 bg-[radial-gradient(72%_58%_at_50%_16%,rgba(255,251,242,0.55),transparent_72%)]"
+            />
+            <div
+              aria-hidden="true"
+              class="dotgrid absolute inset-0 opacity-20 [mask-image:radial-gradient(120%_90%_at_50%_0%,black,transparent_70%)]"
+            />
+            <Image
+              src={photo}
+              alt={dict.hero.photoAlt}
+              widths={[176, 264, 352]}
+              sizes="176px"
+              class="absolute inset-0 h-full w-full object-contain object-bottom [filter:saturate(1.05)_sepia(0.03)] [-webkit-mask-image:linear-gradient(to_bottom,#000_86%,transparent)] [mask-image:linear-gradient(to_bottom,#000_86%,transparent)]"
+              loading="lazy"
+            />
+          </div>
+        )
+      }
+
+      <div>
+        <span class="kicker">{dict.about.kicker}</span>
+        <h2 class="mt-4 text-h3 font-semibold">{dict.about.title}</h2>
+        <p class="mt-4 text-lead leading-relaxed text-muted">{dict.about.text}</p>
+
+        <ul class="mt-6 grid gap-3">
+          {
+            dict.about.points.map((point) => (
+              <li class="flex gap-3">
+                <span
+                  aria-hidden="true"
+                  class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent"
+                >
+                  <svg viewBox="0 0 24 24" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </span>
+                <span class="leading-relaxed">{point}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-8 border-t border-line pt-6">
+          <p class="font-display text-xl font-semibold">{fullName}</p>
+          <svg viewBox="0 0 110 12" class="mt-1 h-3 w-24 text-brass" fill="none" aria-hidden="true">
+            <path d="M2 7C18 2 33 10 52 5s34-5 56 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <p class="mt-2 text-sm text-muted">{dict.about.signoffRole}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

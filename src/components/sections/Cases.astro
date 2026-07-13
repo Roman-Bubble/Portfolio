@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import { t, type Lang } from '../../i18n';
+import CaseCard from '../CaseCard.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const cases = (await getCollection('cases', ({ data }) => data.published)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section id="cases" class="mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-20 md:px-8 md:py-28">
+  <div class="max-w-2xl">
+    <span class="kicker reveal">{dict.cases.kicker}</span>
+    <h2 class="reveal mt-4 text-h2 font-bold text-balance">{dict.cases.title}</h2>
+    <p class="reveal mt-4 text-lead text-muted">{dict.cases.sub}</p>
+  </div>
+  <div data-stagger="110" class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {cases.map((entry) => <CaseCard lang={lang} entry={entry} />)}
+  </div>
+</section>

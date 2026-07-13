@@ -1,0 +1,48 @@
+---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  videoId: string;
+  label: string;
+}
+
+const { lang, videoId, label } = Astro.props;
+const dict = t(lang);
+---
+
+<!-- Відео вантажиться лише після кліку, щоб не гальмувати сторінку -->
+<button
+  type="button"
+  class="video-facade group relative block aspect-video w-full overflow-hidden rounded-2xl border border-line bg-ink"
+  data-video-id={videoId}
+  aria-label={`${dict.testimonials.playVideo}: ${label}`}
+>
+  <img
+    src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+    alt=""
+    loading="lazy"
+    class="h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-60"
+  />
+  <span
+    aria-hidden="true"
+    class="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent text-2xl text-white shadow-lg"
+    >▶</span
+  >
+</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.video-facade').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.videoId;
+      if (!id) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.className = 'aspect-video w-full rounded-2xl border border-line';
+      iframe.title = btn.getAttribute('aria-label') ?? 'Video';
+      btn.replaceWith(iframe);
+    });
+  });
+</script>

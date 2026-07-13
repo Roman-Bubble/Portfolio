@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { pick, t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  entry: CollectionEntry<'cases'>;
+}
+
+const { lang, entry } = Astro.props;
+const dict = t(lang);
+const { data } = entry;
+const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
+---
+
+<article
+  class="reveal group flex flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]"
+>
+  <div class="relative overflow-hidden">
+    <Image
+      src={data.cover}
+      alt={data.business.name}
+      widths={[400, 640, 900]}
+      sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+      class="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+      loading="lazy"
+    />
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+    >
+    </div>
+    {
+      data.sample && (
+        <span class="absolute left-4 top-4 rounded-full bg-brass px-3 py-1 text-xs font-medium tracking-wide text-white shadow-sm">
+          {dict.cases.sampleBadge}
+        </span>
+      )
+    }
+  </div>
+  <div class="flex grow flex-col gap-3 p-6">
+    <p class="text-sm font-medium text-muted">
+      {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
+    </p>
+    <p class="flex items-start gap-2.5 text-h3 leading-snug font-semibold text-balance">
+      <span aria-hidden="true" class="mt-2 h-2 w-2 shrink-0 rounded-full bg-brass"></span>
+      <span>{pick(lang, data.result)}</span>
+    </p>
+    <p class="text-sm text-muted">{data.business.name}</p>
+    <a
+      href={href}
+      class="mt-auto inline-flex items-center gap-1.5 pt-2 font-medium text-accent"
+    >
+      <span class="group-hover:underline">{dict.cases.open}</span>
+      <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+    </a>
+  </div>
+</article>

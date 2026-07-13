@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#eceae5"/>
+  <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#cfcabf" stroke-width="4" stroke-dasharray="18 14" rx="24"/>
+  <g fill="#a8a294">
+    <circle cx="800" cy="380" r="90" fill="none" stroke="#a8a294" stroke-width="10"/>
+    <circle cx="800" cy="380" r="34"/>
+    <rect x="700" y="252" width="80" height="36" rx="10"/>
+  </g>
+  <text x="800" y="560" font-family="Arial, sans-serif" font-size="44" fill="#8d8779" text-anchor="middle">Фото бізнесу</text>
+  <text x="800" y="620" font-family="Arial, sans-serif" font-size="30" fill="#a8a294" text-anchor="middle">замініть цей файл на cover.jpg</text>
+</svg>

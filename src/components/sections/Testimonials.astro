@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { pick, t, type Lang } from '../../i18n';
+import VideoFacade from '../VideoFacade.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+
+// Показуємо лише справжні відгуки: не зразки, з непорожньою цитатою.
+// Поки всі кейси є зразками, секція не рендериться взагалі (жодного вигаданого відгуку).
+const cases = (await getCollection('cases'))
+  .filter((e) => e.data.published && !e.data.sample && pick(lang, e.data.testimonial.quote).trim())
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+{
+  cases.length > 0 && (
+    <section
+      id="testimonials"
+      class="mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-16 md:px-8 md:py-24"
+    >
+      <h2 class="text-h2 font-bold text-balance">{dict.testimonials.title}</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {cases.map(({ data }) => {
+          const isTranslated = lang === 'en' && data.testimonial.originalLang === 'ua';
+          return (
+            <figure class="reveal flex flex-col gap-5 rounded-3xl border border-line bg-card p-6 shadow-sm">
+              {data.testimonial.video && (
+                <VideoFacade lang={lang} videoId={data.testimonial.video} label={data.business.name} />
+              )}
+              <blockquote class="leading-relaxed whitespace-pre-line">
+                «{pick(lang, data.testimonial.quote).trim()}»
+                {isTranslated && (
+                  <span class="mt-2 block text-xs text-muted">Translated from Ukrainian</span>
+                )}
+              </blockquote>
+              <figcaption class="mt-auto flex items-center gap-3">
+                <Image
+                  src={data.owner.photo}
+                  alt={data.owner.name}
+                  widths={[96]}
+                  sizes="48px"
+                  class="h-12 w-12 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="font-medium">{data.owner.name}</p>
+                  <p class="text-sm text-muted">
+                    {data.business.name} · {pick(lang, data.business.city)}
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+          );
+        })}
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,52 @@
+---
+import { SITE } from '../../site.config.mjs';
+import { t, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<section id="faq" class="mx-auto w-full max-w-3xl scroll-mt-24 px-5 py-20 md:px-8 md:py-28">
+  <div class="reveal">
+    <span class="kicker">{dict.faq.kicker}</span>
+    <h2 class="mt-4 text-h2 font-bold text-balance">{dict.faq.title}</h2>
+  </div>
+
+  <div data-stagger="60" class="mt-10 grid gap-3">
+    {
+      dict.faq.items.map((item) => (
+        <details class="reveal group rounded-2xl border border-line bg-card px-6 shadow-[var(--shadow-card)] transition-colors duration-200 hover:border-accent/30 open:border-accent/25 open:bg-accent-soft/35">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[1.0625rem] font-medium transition-colors duration-200 group-open:text-accent [&::-webkit-details-marker]:hidden">
+            {item.q}
+            <span
+              aria-hidden="true"
+              class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/8 text-accent transition-[transform,background-color,color] duration-300 group-open:rotate-180 group-open:bg-accent group-open:text-white"
+            >
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <div>
+              <p class="max-w-prose pb-5 leading-relaxed text-muted">{item.a}</p>
+            </div>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+
+  <p class="reveal mt-8 text-center text-muted">
+    {dict.faq.more}{' '}
+    <a
+      href={SITE.telegram}
+      class="font-medium text-accent underline decoration-brass/50 underline-offset-4 transition-colors hover:text-accent-deep"
+      >{dict.faq.moreCta}</a
+    >
+  </p>
+</section>

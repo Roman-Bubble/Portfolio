@@ -1,0 +1,75 @@
+---
+import { SITE } from '../../site.config.mjs';
+import { t, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const inputClass =
+  'rounded-xl border border-line bg-bg px-4 py-3 text-ink outline-none transition-[border-color,box-shadow] duration-200 focus:border-accent focus:ring-2 focus:ring-accent/25';
+---
+
+<section id="contact" class="relative scroll-mt-24 overflow-hidden bg-ink-deep">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="dotgrid absolute inset-0 opacity-[0.06] invert"></div>
+    <div class="glow-accent absolute -top-24 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full opacity-60"></div>
+    <div class="glow-brass absolute bottom-[-20%] right-[-8%] h-[28rem] w-[28rem] rounded-full opacity-25"></div>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-2xl px-5 py-20 text-center md:px-8 md:py-28">
+    <div class="reveal mx-auto mb-7 w-fit">
+      <div class="notif float-soft">
+        <span class="font-medium text-ink">{dict.final.notif}</span>
+      </div>
+    </div>
+
+    <span class="kicker reveal" style="color: var(--color-brass-soft)">{dict.final.kicker}</span>
+    <h2 class="reveal mt-4 text-h2 font-bold text-balance text-white">{dict.final.title}</h2>
+    <p class="reveal mt-4 text-lead text-white/75">{dict.final.sub}</p>
+
+    <div class="reveal mt-8">
+      <a href={SITE.telegram} class="btn btn-light px-8 py-4 text-lg">
+        {dict.final.cta}
+        <span aria-hidden="true" class="btn-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="reveal mt-8 flex items-center gap-4 text-sm font-medium tracking-wide text-white/45 uppercase">
+      <span class="h-px flex-1 bg-white/15"></span>
+      {dict.final.or}
+      <span class="h-px flex-1 bg-white/15"></span>
+    </div>
+
+    <form
+      method="POST"
+      action="/api/lead"
+      class="reveal mx-auto mt-6 grid max-w-md gap-3 rounded-[1.5rem] bg-card p-6 text-left shadow-[var(--shadow-lift)] md:p-7"
+    >
+      <input type="hidden" name="lang" value={lang} />
+      {/* Пастка для ботів: людина цього поля не бачить */}
+      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+      <label class="grid gap-1.5">
+        <span class="text-sm font-medium">{dict.final.form.name}</span>
+        <input type="text" name="name" required maxlength="100" autocomplete="name" class={inputClass} />
+      </label>
+      <label class="grid gap-1.5">
+        <span class="text-sm font-medium">{dict.final.form.phone}</span>
+        <input type="tel" name="phone" required maxlength="30" autocomplete="tel" class={inputClass} />
+      </label>
+      <label class="grid gap-1.5">
+        <span class="text-sm font-medium">{dict.final.form.biz}</span>
+        <input type="text" name="biz" maxlength="200" class={inputClass} />
+      </label>
+      <button type="submit" class="btn btn-primary mt-2 px-7 py-3.5">{dict.final.form.submit}</button>
+    </form>
+
+    <p class="reveal mt-8 text-white/80">
+      {dict.final.call}
+      <a href={SITE.phoneHref} class="font-medium text-white underline underline-offset-4 transition-colors hover:text-brass-soft">{SITE.phone}</a>
+    </p>
+    <p class="reveal mt-3 text-sm text-white/55">{dict.final.trust}</p>
+  </div>
+</section>

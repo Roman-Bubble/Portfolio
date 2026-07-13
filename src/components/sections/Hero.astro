@@ -1,0 +1,176 @@
+---
+import { Image } from 'astro:assets';
+import { SITE } from '../../site.config.mjs';
+import { t, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+
+// Фото підхоплюється автоматично: покладіть src/assets/roman.png (або .jpg/.webp).
+const photos = import.meta.glob<{ default: ImageMetadata }>(
+  '../../assets/roman.{jpg,jpeg,png,webp,svg}',
+  { eager: true },
+);
+const photo = Object.values(photos)[0]?.default;
+
+const notifs = dict.hero.notif.map((line) => {
+  const i = line.indexOf(':');
+  return i === -1
+    ? { label: line, rest: '' }
+    : { label: line.slice(0, i), rest: line.slice(i + 1).trim() };
+});
+
+const homeCases = lang === 'en' ? '/en/#cases' : '/#cases';
+---
+
+<section id="hero" class="relative overflow-hidden">
+  <div
+    class="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 pt-14 pb-16 md:px-8 md:pt-24 md:pb-24"
+    class:list={[photo && 'lg:grid-cols-[1.05fr_minmax(0,26rem)]']}
+  >
+    <!-- Текстова колонка -->
+    <div data-stagger="100" class:list={[!photo && 'mx-auto max-w-3xl text-center']}>
+      <span
+        class="reveal inline-flex items-center gap-2 rounded-full border border-line bg-surface/70 px-3.5 py-1.5 text-sm font-medium text-ink shadow-sm backdrop-blur"
+      >
+        <span class="status-dot relative flex h-2 w-2 text-accent">
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-current"></span>
+        </span>
+        {dict.hero.status}
+      </span>
+
+      <h1 class="reveal mt-6 text-h1 font-bold text-balance">
+        {dict.hero.h1a}{' '}
+        <span class="brass-underline">{dict.hero.h1b}</span>
+      </h1>
+
+      <p
+        class:list={['reveal mt-6 max-w-xl text-lead text-muted', !photo && 'mx-auto']}
+      >
+        {dict.hero.sub}
+      </p>
+
+      <div
+        class:list={['reveal mt-9 flex flex-col gap-3 sm:flex-row', !photo ? 'justify-center' : 'sm:items-center']}
+      >
+        <a href={SITE.telegram} class="btn btn-primary px-8 py-4 text-lg">
+          {dict.hero.cta}
+          <span aria-hidden="true" class="btn-arrow">→</span>
+        </a>
+        <a href={homeCases} class="btn btn-ghost px-7 py-4 text-base">
+          {dict.hero.secondaryCta}
+        </a>
+      </div>
+
+      <p class="reveal mt-4 text-sm text-muted">{dict.hero.trust}</p>
+    </div>
+
+    <!-- Портрет -->
+    {
+      photo && (
+        <div class="reveal relative mx-auto w-full max-w-md" style="--d:220ms">
+          <div aria-hidden="true" class="absolute -inset-5 -z-10">
+            <div class="glow-accent absolute inset-0 rounded-[3rem] opacity-70 blur-2xl" />
+          </div>
+          <div
+            aria-hidden="true"
+            class="absolute -right-5 -top-5 h-28 w-28 rounded-full border border-brass/35 sm:h-32 sm:w-32"
+          />
+
+          <div class="portrait-panel relative aspect-4/5 overflow-hidden rounded-[2.2rem] shadow-portrait ring-1 ring-ink/10">
+            {/* М'яке світло за головою: фігура виходить з фону, а не наклеєна */}
+            <div
+              aria-hidden="true"
+              class="absolute inset-0 bg-[radial-gradient(72%_58%_at_50%_18%,rgba(255,251,242,0.6),transparent_72%)]"
+            />
+            <div
+              aria-hidden="true"
+              class="dotgrid absolute inset-0 opacity-25 [mask-image:radial-gradient(120%_90%_at_50%_0%,black,transparent_70%)]"
+            />
+            <Image
+              src={photo}
+              alt={dict.hero.photoAlt}
+              widths={[320, 400, 520, 700, 880]}
+              sizes="(min-width: 1024px) 400px, (min-width: 768px) 44vw, 88vw"
+              class="absolute inset-0 h-full w-full object-contain object-bottom [filter:saturate(1.05)_sepia(0.03)] [-webkit-mask-image:linear-gradient(to_bottom,#000_84%,transparent)] [mask-image:linear-gradient(to_bottom,#000_84%,transparent)]"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+
+          <div class="notif float-soft absolute -left-3 bottom-[27%] max-w-[15rem] sm:-left-6">
+            <span>
+              <span class="font-medium text-ink">{notifs[0].label}</span>
+              {notifs[0].rest && <span class="text-muted"> {notifs[0].rest}</span>}
+            </span>
+          </div>
+          <div class="notif float-soft-slow absolute right-0 bottom-[7%] max-w-[15rem] sm:-right-5">
+            <span>
+              <span class="font-medium text-ink">{notifs[1].label}</span>
+              {notifs[1].rest && <span class="text-muted"> {notifs[1].rest}</span>}
+            </span>
+          </div>
+        </div>
+      )
+    }
+  </div>
+
+  <!-- Смуга довіри -->
+  <div class="mx-auto w-full max-w-6xl px-5 md:px-8">
+    <div
+      class="reveal flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line/70 py-6 text-sm font-medium text-muted"
+    >
+      <span class="inline-flex items-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+        {dict.hero.chips[0]}
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" />
+        </svg>
+        {dict.hero.chips[1]}
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z" />
+          <circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+        {dict.hero.chips[2]}
+      </span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .status-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: currentColor;
+    animation: status-ping 2.6s var(--ease-out) infinite;
+  }
+  @keyframes status-ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    70%,
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .status-dot::after {
+      animation: none;
+    }
+  }
+</style>
