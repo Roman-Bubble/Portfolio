@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#e6e3dc"/>
+  <circle cx="400" cy="310" r="130" fill="#b5afa1"/>
+  <path d="M150 800 Q150 540 400 540 Q650 540 650 800 Z" fill="#b5afa1"/>
+  <text x="400" y="740" font-family="Arial, sans-serif" font-size="34" fill="#7d7768" text-anchor="middle">фото власника → owner.jpg</text>
+</svg>

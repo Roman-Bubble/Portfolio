@@ -1,0 +1,53 @@
+# Готовий проєкт. Опис заповнюйте про реальний сайт: ситуація, рішення, результат.
+# owner.name / owner.photo використовуються лише у відгуку — якщо відгук порожній, вони не показуються.
+
+published: true
+sample: false
+order: 5
+
+business:
+  name: 'Ресторан «ПОПІЛ»'
+  niche: { ua: 'Ресторан живого вогню', en: 'Open-fire restaurant' }
+  city: { ua: 'Київ', en: 'Kyiv' }
+
+liveUrl: 'https://popil-restaurant.vercel.app/'
+
+owner:
+  name: 'ПОПІЛ'
+  photo: './owner.svg'
+
+cover: './cover.jpg'
+gallery: ['./shot-1.jpg', './shot-2.jpg']
+
+problem:
+  ua: >
+    Ресторану з характером мало сторінки з меню і телефоном: гість обирає
+    не страву, а вечір. Якщо сайт не передає атмосферу, вибір програється
+    закладам з гарнішою стрічкою в Instagram.
+  en: >
+    A restaurant with character needs more than a menu and a phone
+    number: guests choose an evening, not a dish. If the site doesn't
+    carry the atmosphere, the booking goes to whoever has the prettier
+    Instagram feed.
+
+solution:
+  ua: >
+    Сайт веде гостя як дегустація: історія живого вогню, меню чотирма
+    главами, шеф зі своєю філософією, зала в присмерку. Бронювання столу
+    у два поля, дегустаційний сет підказує, з чого почати знайомство.
+  en: >
+    The site walks the guest through like a tasting: the story of live
+    fire, a menu in four chapters, the chef and his philosophy, the dining
+    room at dusk. Reserving a table takes two fields, and the tasting set
+    suggests where to start.
+
+result:
+  ua: 'Атмосфера ресторану живого вогню з екрана і бронювання столу у два поля'
+  en: 'The atmosphere of an open-fire restaurant on screen, and table booking in two fields'
+
+testimonial:
+  quote:
+    ua: ''
+    en: ''
+  originalLang: ua
+  video: ''

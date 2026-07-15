@@ -7,11 +7,10 @@
 export const SITE_URL = 'https://example.com';
 
 export const SITE = {
-  // TODO: прізвище (укр. та англ. написання)
   name: 'Роман',
-  surname: 'Лозунський',
+  surname: 'Лозинський',
   nameEn: 'Roman',
-  surnameEn: 'Lozunskyi',
+  surnameEn: 'Lozynskyi',
 
   // TODO: посилання на ваш Telegram
   telegram: 'https://t.me/USERNAME',
@@ -21,8 +20,8 @@ export const SITE = {
   phoneHref: 'tel:+380XXXXXXXXX',
 
   // Ціни (укр. сторінка: грн, англ.: $)
-  priceUa: 'від 14 000 грн',
-  priceEn: 'from $350',
+  priceUa: 'від 20 000 грн',
+  priceEn: 'from $500',
   careUa: 'від 500 грн/міс',
   careEn: 'from $15/mo',
 };

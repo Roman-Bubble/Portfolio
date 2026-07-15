@@ -1,0 +1,55 @@
+# Готовий проєкт. Опис заповнюйте про реальний сайт: ситуація, рішення, результат.
+# owner.name / owner.photo використовуються лише у відгуку — якщо відгук порожній, вони не показуються.
+
+published: true
+sample: false
+order: 4
+
+business:
+  name: 'Ремонт «РІВНО»'
+  niche: { ua: 'Ремонт квартир під ключ', en: 'Turnkey renovation' }
+  city: { ua: 'Київ', en: 'Kyiv' }
+
+liveUrl: 'https://rivno-renovation.vercel.app/'
+
+owner:
+  name: 'РІВНО'
+  photo: './owner.svg'
+
+cover: './cover.jpg'
+gallery: ['./shot-1.jpg', './shot-2.jpg']
+
+problem:
+  ua: >
+    У ремонті клієнт від початку чекає обману: кошторис виросте вдвічі,
+    строки попливуть, бригада зникне з авансом. Тому рішення ухвалюють
+    місяцями і шукають «по знайомству», а не за якістю роботи.
+  en: >
+    In renovation the client expects to be cheated from day one: the
+    estimate doubles, deadlines slip, the crew vanishes with the advance.
+    So decisions take months and people hire "a friend of a friend"
+    instead of the best crew.
+
+solution:
+  ua: >
+    Сайт побудований на цифрах і договорі: калькулятор рахує кошторис за
+    площею і рівнем опорядження, оплата йде етапами після приймання
+    кожного, пеня за прострочення прописана прямо на сторінці. Окрема
+    таблиця чесно порівнює компанію з бригадою за оголошенням.
+  en: >
+    The site is built on numbers and a contract: a calculator prices the
+    job by area and finish level, payment goes stage by stage after each
+    one is accepted, and the late-penalty clause is printed right on the
+    page. A comparison table honestly stacks the company against a
+    classifieds crew.
+
+result:
+  ua: 'Калькулятор кошторису й наголос на договорі: клієнт рахує ремонт і замовляє замір'
+  en: 'A cost calculator and a contract-first message: the client prices the renovation and books a survey'
+
+testimonial:
+  quote:
+    ua: ''
+    en: ''
+  originalLang: ua
+  video: ''

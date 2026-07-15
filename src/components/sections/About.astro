@@ -11,56 +11,66 @@ const { lang } = Astro.props;
 const dict = t(lang);
 const fullName = lang === 'en' ? `${SITE.nameEn} ${SITE.surnameEn}` : `${SITE.name} ${SITE.surname}`;
 
-const photos = import.meta.glob<{ default: ImageMetadata }>(
+// Окреме фото для «Про мене» (roman-about.*), інакше — те саме, що в hero (roman.*).
+const aboutPhotos = import.meta.glob<{ default: ImageMetadata }>(
+  '../../assets/roman-about.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+const heroPhotos = import.meta.glob<{ default: ImageMetadata }>(
   '../../assets/roman.{jpg,jpeg,png,webp,svg}',
   { eager: true },
 );
-const photo = Object.values(photos)[0]?.default;
+const photo = Object.values(aboutPhotos)[0]?.default ?? Object.values(heroPhotos)[0]?.default;
 ---
 
-<section id="about" class="mx-auto w-full max-w-4xl scroll-mt-24 px-5 pb-20 md:px-8 md:pb-28">
-  <div
-    class="reveal relative overflow-hidden rounded-[1.75rem] border border-line bg-card p-8 shadow-[var(--shadow-card)] md:p-12"
-  >
-    <div
-      aria-hidden="true"
-      class="glow-brass pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full opacity-50"
-    >
-    </div>
-
-    <div class="relative grid gap-8 md:grid-cols-[auto_1fr] md:items-start md:gap-10">
+<section id="about" class="mx-auto w-full max-w-5xl scroll-mt-24 px-5 pb-24 md:px-8 md:pb-32">
+  <div class="border-t border-line/80 pt-14 md:pt-20">
+    <div class="grid gap-12 md:grid-cols-[minmax(0,20rem)_1fr] md:gap-14 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-20">
+      <!-- Портрет: латунна рамка-офсет + підпис, як у журнальному матеріалі -->
       {
         photo && (
-          <div class="portrait-panel relative aspect-4/5 w-36 shrink-0 overflow-hidden rounded-2xl shadow-[var(--shadow-card)] ring-1 ring-ink/10 sm:w-44">
+          <figure class="reveal relative mx-auto w-72 max-w-full md:mx-0 md:w-full">
             <div
               aria-hidden="true"
-              class="absolute inset-0 bg-[radial-gradient(72%_58%_at_50%_16%,rgba(255,251,242,0.55),transparent_72%)]"
+              class="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] border border-brass/45"
             />
-            <div
-              aria-hidden="true"
-              class="dotgrid absolute inset-0 opacity-20 [mask-image:radial-gradient(120%_90%_at_50%_0%,black,transparent_70%)]"
-            />
-            <Image
-              src={photo}
-              alt={dict.hero.photoAlt}
-              widths={[176, 264, 352]}
-              sizes="176px"
-              class="absolute inset-0 h-full w-full object-contain object-bottom [filter:saturate(1.05)_sepia(0.03)] [-webkit-mask-image:linear-gradient(to_bottom,#000_86%,transparent)] [mask-image:linear-gradient(to_bottom,#000_86%,transparent)]"
-              loading="lazy"
-            />
-          </div>
+            <div class="portrait-panel relative aspect-3/4 overflow-hidden rounded-[2rem] shadow-[var(--shadow-portrait)] ring-1 ring-ink/10">
+              <Image
+                src={photo}
+                alt={dict.hero.photoAlt}
+                widths={[320, 440, 640]}
+                sizes="(min-width: 1024px) 352px, (min-width: 768px) 320px, 288px"
+                class="reveal-img absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div
+                aria-hidden="true"
+                class="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent"
+              />
+              <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-white">
+                <div>
+                  <p class="font-display text-lg leading-tight font-semibold">{fullName}</p>
+                  <p class="mt-0.5 text-xs text-white/75">{dict.about.signoffRole}</p>
+                </div>
+                <svg viewBox="0 0 110 12" class="mb-1 h-3 w-20 shrink-0 text-brass-soft" fill="none" aria-hidden="true">
+                  <path d="M2 7C18 2 33 10 52 5s34-5 56 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </figcaption>
+            </div>
+          </figure>
         )
       }
 
-      <div>
-        <span class="kicker">{dict.about.kicker}</span>
-        <h2 class="mt-4 text-h3 font-semibold">{dict.about.title}</h2>
-        <p class="mt-4 text-lead leading-relaxed text-muted">{dict.about.text}</p>
+      <!-- Текст: редакційна колонка з видiленою ключовою фразою -->
+      <div data-stagger="90" class="max-w-2xl">
+        <span class="kicker reveal">{dict.about.kicker}</span>
+        <h2 class="reveal mt-4 text-h2 font-bold text-balance">{dict.about.title}</h2>
+        <p class="reveal mt-6 text-lead leading-relaxed text-muted">{dict.about.text}</p>
 
-        <ul class="mt-6 grid gap-3">
+        <ul class="mt-8 grid gap-3.5">
           {
             dict.about.points.map((point) => (
-              <li class="flex gap-3">
+              <li class="reveal flex gap-3">
                 <span
                   aria-hidden="true"
                   class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent"
@@ -75,13 +85,9 @@ const photo = Object.values(photos)[0]?.default;
           }
         </ul>
 
-        <div class="mt-8 border-t border-line pt-6">
-          <p class="font-display text-xl font-semibold">{fullName}</p>
-          <svg viewBox="0 0 110 12" class="mt-1 h-3 w-24 text-brass" fill="none" aria-hidden="true">
-            <path d="M2 7C18 2 33 10 52 5s34-5 56 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-          <p class="mt-2 text-sm text-muted">{dict.about.signoffRole}</p>
-        </div>
+        <p class="reveal mt-10 border-l-2 border-brass/60 pl-5 font-display text-h3 font-semibold text-balance text-accent">
+          {dict.about.pullQuote}
+        </p>
       </div>
     </div>
   </div>

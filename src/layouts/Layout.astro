@@ -81,13 +81,15 @@ const skipLabel = lang === 'en' ? 'Skip to content' : 'Перейти до вм�
       document.querySelectorAll('[data-stagger]').forEach((group) => {
         const el = group as HTMLElement;
         const step = Number(el.dataset.stagger) || 90;
-        el.querySelectorAll<HTMLElement>(':scope > .reveal, :scope > * > .reveal').forEach((child, i) => {
+        el.querySelectorAll<HTMLElement>(
+          ':scope > .reveal, :scope > * > .reveal, :scope > .reveal-blur, :scope > * > .reveal-blur',
+        ).forEach((child, i) => {
           if (!child.style.getPropertyValue('--d')) child.style.setProperty('--d', `${i * step}ms`);
         });
       });
 
       // Поява під час скролу
-      const items = document.querySelectorAll('.reveal');
+      const items = document.querySelectorAll('.reveal, .reveal-img, .reveal-blur');
       if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver(
           (entries) => {

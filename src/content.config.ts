@@ -20,7 +20,8 @@ const cases = defineCollection({
         niche: localized,
         city: localized,
       }),
-      liveUrl: z.string().url(),
+      // порожній рядок = кнопки «наживо» не буде (напр., зразок ще не задеплоєно)
+      liveUrl: z.string().url().or(z.literal('')).default(''),
       owner: z.object({
         name: z.string(),
         photo: image(),

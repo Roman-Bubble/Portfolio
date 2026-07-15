@@ -17,7 +17,7 @@ const { data } = entry;
 const home = lang === 'en' ? '/en/' : '/';
 const metaTitle = `${data.business.name}: ${pick(lang, data.result)}`;
 const quote = pick(lang, data.testimonial.quote).trim();
-const showTestimonial = !data.sample && quote.length > 0;
+const showTestimonial = quote.length > 0;
 const blocks = [
   { label: dict.cases.problem, text: pick(lang, data.problem) },
   { label: dict.cases.solution, text: pick(lang, data.solution) },
@@ -32,13 +32,6 @@ const blocks = [
       <p class="text-sm font-medium text-muted">
         {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
       </p>
-      {
-        data.sample && (
-          <span class="rounded-full bg-brass px-3 py-0.5 text-xs font-medium tracking-wide text-white">
-            {dict.cases.sampleBadge}
-          </span>
-        )
-      }
     </div>
     <h1 class="mt-2 text-h2 font-bold text-balance">{data.business.name}</h1>
     <p class="mt-4 flex items-start gap-3 text-h3 font-semibold text-accent text-balance">
@@ -56,20 +49,12 @@ const blocks = [
     />
 
     {
-      data.sample && (
-        <p class="mt-5 rounded-2xl bg-accent-soft px-5 py-4 text-sm leading-relaxed text-muted">
-          {dict.cases.sampleNote}
-        </p>
-      )
-    }
-
-    {
-      !data.sample && (
+      data.liveUrl && (
         <a
           href={data.liveUrl}
           target="_blank"
           rel="noopener"
-          class="mt-6 inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent hover:text-white"
+          class="mt-8 inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent hover:text-white"
         >
           {dict.cases.live}
           <span aria-hidden="true">↗</span>

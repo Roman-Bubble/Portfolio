@@ -9,13 +9,13 @@ const en: typeof uk = {
   },
 
   nav: {
-    cases: 'Examples',
+    cases: 'Work',
     price: 'Pricing',
     how: 'How it works',
     cta: 'Message me on Telegram',
   },
 
-  langSwitch: { label: 'Language', short: 'УК', full: 'Українська', target: 'uk' as 'uk' | 'en' },
+  langSwitch: { label: 'Language', short: 'UA', full: 'Українська', target: 'uk' as 'uk' | 'en' },
 
   hero: {
     status: 'Taking on new projects',
@@ -23,7 +23,7 @@ const en: typeof uk = {
     h1b: "They're finding your competitors.",
     sub: `I'm ${SITE.nameEn}. I build websites that make people call and book, not just look and move on.`,
     cta: 'Message me on Telegram',
-    secondaryCta: 'See examples',
+    secondaryCta: 'See my work',
     trust: 'I reply personally, usually within the hour.',
     chips: ['I reply personally', 'Live in ~2 weeks', 'Fixed price'],
     photoAlt: `${SITE.nameEn} ${SITE.surnameEn}, photo`,
@@ -31,44 +31,42 @@ const en: typeof uk = {
   },
 
   cases: {
-    kicker: 'Examples',
+    kicker: 'Work',
     title: 'What a website that sells looks like',
-    sub: 'Three samples for different niches: a car service, a salon, a clinic. Yours will be about your business, but the approach is the same.',
-    open: 'View example',
-    live: 'Visit the live site',
-    problem: 'Where they started',
-    solution: 'What I did',
-    result: 'What changed',
+    sub: 'Five websites across different niches: beauty, auto, dental, renovation, dining. Each one solves the core job of its business. Yours will be about you, but the approach is the same.',
+    open: 'View project',
+    live: 'Open the site',
+    problem: 'The situation',
+    solution: 'The solution',
+    result: 'The result',
     ownerSays: 'In the owner’s words',
-    back: 'All examples',
-    sampleBadge: 'Sample',
-    sampleNote:
-      'This is a sample, not a real client. Your case will look like this: real photos, the owner’s real words, a real result.',
+    back: 'All work',
   },
 
   offer: {
     kicker: 'The offer',
     title: 'What you get',
     name: 'A website that brings customers',
-    priceLabel: 'Standard website',
+    priceLabel: 'Turnkey website',
     priceMeta: 'one-time',
     scope:
-      'Everything on one page: services, prices, photos, reviews and a booking button. No catalog, no blog. Local businesses almost never need them.',
+      'One page with everything that convinces a customer to choose you: services, prices, photos, reviews and an easy booking button. Need more pages or specific features? We scope that together.',
     includes: "What's included",
     bullets: [
       'A half-hour talk about your business. Then I take it from there.',
-      'Copy about your services in your own words, no template filler.',
+      'Copy that sells: in your own words, no template filler.',
       'A design people trust. Opens fast even on an old phone.',
       'Call, Telegram and booking buttons. Reaching you takes one tap.',
-      'Full launch: domain, setup, testing.',
-      'Two weeks of free changes after launch.',
+      'Full launch: domain, setup, testing on every screen.',
+      'Two weeks of free tweaks after launch.',
     ],
     price: SITE.priceEn,
-    priceNote: "I'll give you the exact number after a short call and lock it in before we start. No extra charges along the way.",
+    priceNote:
+      'Most sites land between $500 and $900 depending on scope. I give you the exact number after a short call and lock it in before we start. No extra charges along the way.',
     time: 'Usually ready in about two weeks.',
     timeCaveat:
       'Bigger or unusual projects are scoped separately: a short call first, then a clear timeline and price.',
-    guarantee: "I keep changing it until you're happy, within the agreed scope.",
+    guarantee: "I keep making changes until you're happy with the result, within the agreed scope.",
     care: {
       title: 'Care plan',
       text: 'Your website keeps working: hosting, updated prices and services, small changes. Cancel anytime.',
@@ -96,7 +94,7 @@ const en: typeof uk = {
       },
       {
         title: 'Launch',
-        text: 'I connect the domain, test everything on a phone and go live. Then two weeks of free changes.',
+        text: 'I connect the domain, test everything on a phone and go live. Then two weeks of free tweaks.',
       },
     ],
   },
@@ -113,7 +111,7 @@ const en: typeof uk = {
     items: [
       {
         q: 'How much does it cost?',
-        a: `A standard website starts at ${SITE.priceEn}. I give you the exact number after a short call, once I understand the scope, and lock it in before we start. No charges added along the way.`,
+        a: 'It depends on scope. Most sites land between $500 and $900. I give you the exact number after a short call, once I understand the job, and lock it in before we start. No charges added along the way.',
       },
       {
         q: 'How long does it take?',
@@ -121,7 +119,7 @@ const en: typeof uk = {
       },
       {
         q: "What if I don't like it?",
-        a: 'I keep changing it until you do, within the agreed scope. You never have to accept it "as is".',
+        a: 'I keep making changes until you do, within the agreed scope. You never have to accept it "as is".',
       },
       {
         q: 'What do you need from me?',
@@ -143,7 +141,8 @@ const en: typeof uk = {
   about: {
     kicker: 'About me',
     title: 'Who I am',
-    text: `I'm ${SITE.nameEn}. I build websites for local businesses: car services, salons, clinics, workshops. No agency, no managers. You talk to me, I do the work, and I'm the one who answers for the result.`,
+    text: `I'm ${SITE.nameEn}. I build websites for local businesses: car services, salons, clinics, workshops. No agency, no managers.`,
+    pullQuote: "You talk to me, I do the work, and I'm the one who answers for the result.",
     points: [
       'I know local business: clinics, car services, salons, workshops.',
       'Copy that sells first, design second. Not the other way round.',

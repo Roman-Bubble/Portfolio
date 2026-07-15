@@ -1,0 +1,54 @@
+# Готовий проєкт. Опис заповнюйте про реальний сайт: ситуація, рішення, результат.
+# owner.name / owner.photo використовуються лише у відгуку — якщо відгук порожній, вони не показуються.
+
+published: true
+sample: false
+order: 2
+
+business:
+  name: 'Студія краси MALVA'
+  niche: { ua: 'Студія краси', en: 'Beauty studio' }
+  city: { ua: 'Київ', en: 'Kyiv' }
+
+liveUrl: 'https://malva-beauty-studio.vercel.app/'
+
+owner:
+  name: 'MALVA'
+  photo: './owner.svg'
+
+cover: './cover.jpg'
+gallery: ['./shot-1.jpg', './shot-2.jpg']
+
+problem:
+  ua: >
+    Класика ніші: запис через Direct, ціни «в особисті», майстрів видно
+    лише в стрічці. Нова клієнтка не знає, скільки коштує процедура і до
+    кого вона потрапить, тому йде туди, де все видно одразу.
+  en: >
+    The classic story in beauty: bookings through DMs, prices "sent
+    privately", the stylists visible only in the feed. A new client can't
+    see what a treatment costs or whose hands she'll end up in, so she
+    goes where everything is visible upfront.
+
+solution:
+  ua: >
+    Сторінка зібрана як журнальна редакція про студію: послуги з цінами
+    і тривалістю, майстри з обличчями й досвідом, студія зсередини.
+    Записатися можна онлайн у кілька дотиків, а знижка на перший візит
+    забирає останній сумнів.
+  en: >
+    The page reads like a magazine feature about the studio: services
+    with prices and duration, the artists shown by face and experience,
+    the space itself. Booking takes a few taps online, and a first-visit
+    discount removes the last bit of doubt.
+
+result:
+  ua: 'Прозорі ціни й онлайн-запис: клієнтка бачить майстрів і записується сама, без листування'
+  en: 'Transparent prices and online booking: a client sees the artists and books herself, no DMs'
+
+testimonial:
+  quote:
+    ua: ''
+    en: ''
+  originalLang: ua
+  video: ''
