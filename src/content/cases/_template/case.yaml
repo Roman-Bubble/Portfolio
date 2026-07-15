@@ -9,7 +9,7 @@ business:
   niche: { ua: 'Ніша українською', en: 'Niche in English' }
   city: { ua: 'Місто', en: 'City' }
 
-liveUrl: 'https://example.com' # жива сторінка, яку ви зробили
+liveUrl: '' # жива сторінка, яку ви зробили; порожньо = без кнопки «наживо»
 
 owner:
   name: "Ім'я власника"

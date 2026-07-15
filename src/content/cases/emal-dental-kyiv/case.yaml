@@ -1,0 +1,55 @@
+# Готовий проєкт. Опис заповнюйте про реальний сайт: ситуація, рішення, результат.
+# owner.name / owner.photo використовуються лише у відгуку — якщо відгук порожній, вони не показуються.
+
+published: true
+sample: false
+order: 3
+
+business:
+  name: 'Стоматологія «Емаль»'
+  niche: { ua: 'Сімейна стоматологія', en: 'Family dental clinic' }
+  city: { ua: 'Київ', en: 'Kyiv' }
+
+liveUrl: 'https://emal-dental-ten.vercel.app/'
+
+owner:
+  name: 'Емаль'
+  photo: './owner.svg'
+
+cover: './cover.jpg'
+gallery: ['./shot-1.jpg', './shot-2.jpg']
+
+problem:
+  ua: >
+    Люди роками відкладають візит до стоматолога не тому, що не болить,
+    а тому, що страшно і незрозуміло, у скільки це виллється. Типовий
+    сайт клініки з сухим переліком послуг цей страх лише підсилює.
+  en: >
+    People put off the dentist for years not because nothing hurts, but
+    because it's scary and nobody tells them what it will end up costing.
+    A typical clinic site with a dry list of services only feeds that
+    fear.
+
+solution:
+  ua: >
+    Кожна секція знімає один страх: «без болю» пояснено по-людськи, ціни
+    видно ще до крісла, план лікування з сумою, яка не змінюється, лікарі
+    з іменами й досвідом. Перший крок навмисно маленький: безкоштовний
+    огляд і план, без зобовʼязань.
+  en: >
+    Every section disarms one fear: "pain-free" explained in human words,
+    prices visible before you're anywhere near the chair, a treatment
+    plan with a price that doesn't change, doctors with names and
+    experience. The first step is deliberately small: a free check-up and
+    a plan, no strings attached.
+
+result:
+  ua: 'Сайт знімає страх перед стоматологом: прозорі ціни, лікарі в обличчя і запис на безкоштовний огляд'
+  en: 'A site that disarms dental fear: clear prices, doctors by name, booking for a free first visit'
+
+testimonial:
+  quote:
+    ua: ''
+    en: ''
+  originalLang: ua
+  video: ''

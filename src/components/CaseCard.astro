@@ -15,7 +15,7 @@ const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
 ---
 
 <article
-  class="reveal group flex flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]"
+  class="reveal group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] focus-within:-translate-y-1.5 focus-within:shadow-[var(--shadow-lift)]"
 >
   <div class="relative overflow-hidden">
     <Image
@@ -31,13 +31,6 @@ const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
       class="absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
     >
     </div>
-    {
-      data.sample && (
-        <span class="absolute left-4 top-4 rounded-full bg-brass px-3 py-1 text-xs font-medium tracking-wide text-white shadow-sm">
-          {dict.cases.sampleBadge}
-        </span>
-      )
-    }
   </div>
   <div class="flex grow flex-col gap-3 p-6">
     <p class="text-sm font-medium text-muted">
@@ -48,12 +41,18 @@ const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
       <span>{pick(lang, data.result)}</span>
     </p>
     <p class="text-sm text-muted">{data.business.name}</p>
-    <a
-      href={href}
+    <span
+      aria-hidden="true"
       class="mt-auto inline-flex items-center gap-1.5 pt-2 font-medium text-accent"
     >
       <span class="group-hover:underline">{dict.cases.open}</span>
-      <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
-    </a>
+      <span class="transition-transform group-hover:translate-x-0.5">→</span>
+    </span>
   </div>
+
+  <!-- Клікабельна вся картка: одне посилання перекриває її повністю -->
+  <a
+    href={href}
+    class="absolute inset-0 z-10 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+    aria-label={`${dict.cases.open}: ${data.business.name}`}></a>
 </article>

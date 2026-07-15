@@ -1,0 +1,57 @@
+# Готовий проєкт. Опис заповнюйте про реальний сайт: ситуація, рішення, результат.
+# owner.name / owner.photo використовуються лише у відгуку — якщо відгук порожній, вони не показуються.
+
+published: true
+sample: false
+order: 1
+
+business:
+  name: 'Студія детейлінгу KVARC'
+  niche: { ua: 'Детейлінг авто', en: 'Car detailing' }
+  city: { ua: 'Київ', en: 'Kyiv' }
+
+liveUrl: 'https://kvarc-detailing.vercel.app/'
+
+owner:
+  name: 'KVARC'
+  photo: './owner.svg'
+
+cover: './cover.jpg'
+gallery: ['./shot-1.jpg', './shot-2.jpg']
+
+problem:
+  ua: >
+    Детейлінг зазвичай продають словами «блиск, як з салону», і клієнт
+    не розуміє, за що платить 15 чи 35 тисяч. Половина звернень
+    починається і закінчується питанням «скільки коштує?», а власник
+    щовечора пояснює одне й те саме в месенджері.
+  en: >
+    Detailing is usually sold with "showroom shine" promises, so the
+    customer has no idea why the price is 15 or 35 thousand. Half of the
+    inquiries start and end with "how much?", and the owner spends every
+    evening typing the same explanation into a messenger.
+
+solution:
+  ua: >
+    Сайт відповідає на питання про гроші сам: калькулятор рахує вартість
+    за розміром авто і пакетом, поруч чесне пояснення, чому кераміка
+    коштує стільки, і письмова гарантія на 5 років. Слайдер «до/після»
+    показує різницю краще за будь-який текст, а бронювання слота займає
+    хвилину.
+  en: >
+    The site answers the money question itself: a calculator prices the
+    job by car size and package, next to a plain-words explanation of why
+    ceramic coating costs what it costs, backed by a written 5-year
+    warranty. A before/after slider shows the difference better than any
+    copy, and booking a slot takes a minute.
+
+result:
+  ua: 'Калькулятор вартості й онлайн-бронювання слота: клієнт рахує ціну сам і одразу займає час'
+  en: 'A price calculator and online slot booking: the customer prices the job and books on the spot'
+
+testimonial:
+  quote:
+    ua: ''
+    en: ''
+  originalLang: ua
+  video: ''

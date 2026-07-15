@@ -43,7 +43,7 @@ const homeCases = lang === 'en' ? '/en/#cases' : '/#cases';
         {dict.hero.status}
       </span>
 
-      <h1 class="reveal mt-6 text-h1 font-bold text-balance">
+      <h1 class="reveal-blur mt-6 text-h1 font-bold text-balance">
         {dict.hero.h1a}{' '}
         <span class="brass-underline">{dict.hero.h1b}</span>
       </h1>
@@ -80,6 +80,10 @@ const homeCases = lang === 'en' ? '/en/#cases' : '/#cases';
             aria-hidden="true"
             class="absolute -right-5 -top-5 h-28 w-28 rounded-full border border-brass/35 sm:h-32 sm:w-32"
           />
+          <div
+            aria-hidden="true"
+            class="absolute inset-0 translate-x-4 translate-y-4 rounded-[2.2rem] border border-brass/40"
+          />
 
           <div class="portrait-panel relative aspect-4/5 overflow-hidden rounded-[2.2rem] shadow-portrait ring-1 ring-ink/10">
             {/* М'яке світло за головою: фігура виходить з фону, а не наклеєна */}
@@ -96,7 +100,7 @@ const homeCases = lang === 'en' ? '/en/#cases' : '/#cases';
               alt={dict.hero.photoAlt}
               widths={[320, 400, 520, 700, 880]}
               sizes="(min-width: 1024px) 400px, (min-width: 768px) 44vw, 88vw"
-              class="absolute inset-0 h-full w-full object-contain object-bottom [filter:saturate(1.05)_sepia(0.03)] [-webkit-mask-image:linear-gradient(to_bottom,#000_84%,transparent)] [mask-image:linear-gradient(to_bottom,#000_84%,transparent)]"
+              class="reveal-img absolute inset-0 h-full w-full object-cover"
               loading="eager"
               fetchpriority="high"
             />

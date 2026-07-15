@@ -317,6 +317,42 @@ html.js .reveal.is-visible {
   transform: none;
 }
 
+/* Поява зображень: розкриття «шторкою» + легкий масштаб (для обкладинок і портретів) */
+html.js .reveal-img {
+  clip-path: inset(8% 8% 8% 8% round 1rem);
+  transform: scale(1.06);
+  opacity: 0;
+  transition:
+    clip-path 1s var(--ease-out-soft),
+    transform 1.1s var(--ease-out-soft),
+    opacity 0.5s var(--ease-out-soft);
+  transition-delay: var(--d, 0ms);
+  will-change: transform, opacity, clip-path;
+}
+html.js .reveal-img.is-visible {
+  clip-path: inset(0 0 0 0 round 0);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Поява заголовків: підйом + зняття легкого розфокусу (працює через data-stagger) */
+html.js .reveal-blur {
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(6px);
+  transition:
+    opacity 0.75s var(--ease-out-soft),
+    transform 0.75s var(--ease-out-soft),
+    filter 0.75s var(--ease-out-soft);
+  transition-delay: var(--d, 0ms);
+  will-change: transform, opacity, filter;
+}
+html.js .reveal-blur.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
 /* Легке "спливання" карток-сповіщень (делікатно, вимикається reduced-motion) */
 @keyframes float-soft {
   0%,
@@ -335,10 +371,14 @@ html.js .float-soft-slow {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.js .reveal {
+  html.js .reveal,
+  html.js .reveal-img,
+  html.js .reveal-blur {
     opacity: 1;
     transform: none;
     transition: none;
+    clip-path: none;
+    filter: none;
   }
   html.js .float-soft,
   html.js .float-soft-slow {
