@@ -5,7 +5,7 @@ const en: typeof uk = {
   meta: {
     title: `${SITE.nameEn} ${SITE.surnameEn}. Websites that bring local businesses customers`,
     description:
-      'A website that makes people call and book, not just scroll past. For car services, salons, clinics and other local businesses. Usually ready in about two weeks.',
+      'Websites for car services, salons, clinics and other local businesses, built to turn Google and social searches into calls and bookings. Usually ready in about two weeks.',
   },
 
   nav: {
@@ -54,8 +54,8 @@ const en: typeof uk = {
     includes: "What's included",
     bullets: [
       'A half-hour talk about your business. Then I take it from there.',
-      'Copy that sells: in your own words, no template filler.',
-      'A design people trust. Opens fast even on an old phone.',
+      'Clear copy about your services and what makes you worth choosing, in your own words, no template filler.',
+      'A design that looks professional and works just as well on a phone as on a laptop.',
       'Call, Telegram and booking buttons. Reaching you takes one tap.',
       'Full launch: domain, setup, testing on every screen.',
       'Two weeks of free tweaks after launch.',
@@ -78,7 +78,7 @@ const en: typeof uk = {
   process: {
     kicker: 'The process',
     title: 'How it works',
-    sub: 'Four steps. Under two hours of your time in total.',
+    sub: 'Four steps. I handle the heavy lifting. You just need a short call and some material about your business.',
     steps: [
       {
         title: 'A call, 30 minutes',
@@ -139,16 +139,16 @@ const en: typeof uk = {
   },
 
   about: {
-    kicker: 'About me',
-    title: 'Who I am',
-    text: 'I build websites for local businesses: car services, salons, clinics, workshops. Nine years in web development, working solo — no agency, no managers.',
-    pullQuote: "You talk to me, I do the work, and I'm the one who answers for the result.",
+    kicker: 'My approach',
+    title: 'A site your customers actually understand',
+    text: 'I build and update websites for local businesses. I help you show your services, prices and advantages clearly, and make the path to a call or booking as simple as possible.',
+    pullQuote: 'I work directly, no managers or middlemen, from the first call to launch.',
     points: [
-      'I know local business: clinics, car services, salons, workshops.',
-      'Copy that sells first, design second. Not the other way round.',
-      'The site opens fast even on an old phone.',
+      'I plan the site structure around the questions your customers actually have.',
+      'I help write clear copy, no leftover ad-speak.',
+      'I design something professional that works just as well on a phone as a laptop.',
     ],
-    signoffRole: 'Web design and copy in one pair of hands',
+    signoffRole: 'Turnkey websites for local business',
   },
 
   final: {
