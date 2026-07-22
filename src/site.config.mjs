@@ -15,12 +15,13 @@ export const SITE = {
   // TODO: посилання на ваш Telegram
   telegram: 'https://t.me/USERNAME',
 
-  // TODO: телефон (як показувати і як дзвонити)
-  phone: '+380 XX XXX XX XX',
-  phoneHref: 'tel:+380XXXXXXXXX',
+  // TODO: телефон (як показувати і як дзвонити). Поки порожньо — кнопки дзвінка на сайті сховані,
+  // щоб не показувати відвідувачам заглушку замість номера.
+  phone: '',
+  phoneHref: '',
 
   // Ціни (укр. сторінка: грн, англ.: $)
-  priceUa: 'від 20 000 грн',
+  priceUa: 'від 18 000 грн',
   priceEn: 'from $500',
   careUa: 'від 500 грн/міс',
   careEn: 'from $15/mo',

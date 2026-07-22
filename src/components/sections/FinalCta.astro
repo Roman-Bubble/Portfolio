@@ -66,10 +66,12 @@ const inputClass =
       <button type="submit" class="btn btn-primary mt-2 px-7 py-3.5">{dict.final.form.submit}</button>
     </form>
 
-    <p class="reveal mt-8 text-white/80">
-      {dict.final.call}
-      <a href={SITE.phoneHref} class="font-medium text-white underline underline-offset-4 transition-colors hover:text-brass-soft">{SITE.phone}</a>
-    </p>
+    {SITE.phone && (
+      <p class="reveal mt-8 text-white/80">
+        {dict.final.call}
+        <a href={SITE.phoneHref} class="font-medium text-white underline underline-offset-4 transition-colors hover:text-brass-soft">{SITE.phone}</a>
+      </p>
+    )}
     <p class="reveal mt-3 text-sm text-white/55">{dict.final.trust}</p>
   </div>
 </section>
