@@ -12,7 +12,8 @@ const { lang } = Astro.props;
 const dict = t(lang);
 
 // Показуємо лише справжні відгуки: не зразки, з непорожньою цитатою.
-// Поки всі кейси є зразками, секція не рендериться взагалі (жодного вигаданого відгуку).
+// Кейси реальні, але цитат поки не зібрано — секція просто не рендериться,
+// а не показує вигаданий відгук.
 const cases = (await getCollection('cases'))
   .filter((e) => e.data.published && !e.data.sample && pick(lang, e.data.testimonial.quote).trim())
   .sort((a, b) => a.data.order - b.data.order);

@@ -20,7 +20,9 @@ const year = new Date().getFullYear();
       <p class="mt-1 text-sm text-muted">{dict.footer.line}</p>
     </div>
     <div class="flex flex-wrap items-center gap-4">
-      <a href={SITE.phoneHref} class="text-sm font-medium text-muted transition-colors hover:text-accent">{SITE.phone}</a>
+      {SITE.phone && (
+        <a href={SITE.phoneHref} class="text-sm font-medium text-muted transition-colors hover:text-accent">{SITE.phone}</a>
+      )}
       <a href={SITE.telegram} class="text-sm font-medium text-muted transition-colors hover:text-accent">Telegram</a>
       <LangSwitch lang={lang} />
     </div>

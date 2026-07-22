@@ -21,11 +21,11 @@ const en: typeof uk = {
     status: 'Taking on new projects',
     h1a: 'Your customers are on Google right now.',
     h1b: "They're finding your competitors.",
-    sub: `I'm ${SITE.nameEn}. I build websites that make people call and book, not just look and move on.`,
+    sub: 'I build websites for salons, clinics, car shops and other local businesses that want more calls and bookings from Google and social media.',
     cta: 'Message me on Telegram',
     secondaryCta: 'See my work',
     trust: 'I reply personally, usually within the hour.',
-    chips: ['I reply personally', 'Live in ~2 weeks', 'Fixed price'],
+    chips: ['I reply personally', 'Live in ~2 weeks', 'Price locked before we start', '9+ years in web development'],
     photoAlt: `${SITE.nameEn} ${SITE.surnameEn}, photo`,
     notif: ['New booking: Olena, cleaning, tomorrow 10:00', 'Telegram: "Hi, any slots on Saturday?"'],
   },
@@ -66,7 +66,7 @@ const en: typeof uk = {
     time: 'Usually ready in about two weeks.',
     timeCaveat:
       'Bigger or unusual projects are scoped separately: a short call first, then a clear timeline and price.',
-    guarantee: "I keep making changes until you're happy with the result, within the agreed scope.",
+    guarantee: 'Revisions to the agreed result are included in the price.',
     care: {
       title: 'Care plan',
       text: 'Your website keeps working: hosting, updated prices and services, small changes. Cancel anytime.',
@@ -119,7 +119,7 @@ const en: typeof uk = {
       },
       {
         q: "What if I don't like it?",
-        a: 'I keep making changes until you do, within the agreed scope. You never have to accept it "as is".',
+        a: 'Revisions to the agreed result are included in the price while we build the site together. You never have to accept it "as is".',
       },
       {
         q: 'What do you need from me?',
@@ -127,7 +127,7 @@ const en: typeof uk = {
       },
       {
         q: 'I already have Instagram. Why a website?',
-        a: 'Instagram reaches people who already follow you. A website gets found by people searching for your service right now. Until you have one, they are finding your competitors. And on a website a customer books right away instead of waiting for a DM reply.',
+        a: 'Instagram is great for showing your work to people who already follow you. A website brings everything together in one place, strengthens how you show up on Google, and lets someone book right away instead of waiting for a DM reply. They work best together.',
       },
       {
         q: 'What if I need something bigger?',
@@ -141,7 +141,7 @@ const en: typeof uk = {
   about: {
     kicker: 'About me',
     title: 'Who I am',
-    text: `I'm ${SITE.nameEn}. I build websites for local businesses: car services, salons, clinics, workshops. No agency, no managers.`,
+    text: 'I build websites for local businesses: car services, salons, clinics, workshops. Nine years in web development, working solo — no agency, no managers.',
     pullQuote: "You talk to me, I do the work, and I'm the one who answers for the result.",
     points: [
       'I know local business: clinics, car services, salons, workshops.',
