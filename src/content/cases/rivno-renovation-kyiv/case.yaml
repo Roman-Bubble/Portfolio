@@ -44,8 +44,8 @@ solution:
     classifieds crew.
 
 result:
-  ua: 'Калькулятор кошторису та заявка на замір.'
-  en: 'A cost calculator and a request for a site survey.'
+  ua: 'Кошторис і заявка на замір'
+  en: 'Estimate and a survey request'
 
 testimonial:
   quote:

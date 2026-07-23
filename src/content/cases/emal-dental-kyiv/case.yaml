@@ -44,8 +44,8 @@ solution:
     a plan, no strings attached.
 
 result:
-  ua: 'Ціни, лікарі та простий запис на консультацію.'
-  en: 'Prices, doctors and easy booking for a consultation.'
+  ua: 'Ціни, лікарі та онлайн-запис'
+  en: 'Prices, doctors and online booking'
 
 testimonial:
   quote:

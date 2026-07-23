@@ -47,8 +47,8 @@ solution:
     copy, and booking a slot takes a minute.
 
 result:
-  ua: 'Розрахунок вартості та онлайн-бронювання без листування.'
-  en: 'Instant price estimate and online booking, no back-and-forth.'
+  ua: 'Розрахунок вартості та онлайн-запис'
+  en: 'Price estimate and online booking'
 
 testimonial:
   quote:

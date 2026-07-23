@@ -42,8 +42,8 @@ solution:
     suggests where to start.
 
 result:
-  ua: 'Атмосфера закладу та бронювання столу.'
-  en: 'The venue’s atmosphere and table booking.'
+  ua: 'Атмосфера та бронювання столу'
+  en: 'Atmosphere and table booking'
 
 testimonial:
   quote:

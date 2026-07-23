@@ -23,7 +23,7 @@ const coverLink =
 {
   featured ? (
     <article class:list={[cardShell, 'cursor-pointer sm:col-span-2']}>
-      <div class="relative aspect-[4/3] sm:aspect-[16/7]">
+      <div class="relative aspect-[16/10] sm:aspect-[11/4]">
         <Image
           src={data.cover}
           alt={data.business.name}
@@ -32,18 +32,21 @@ const coverLink =
           class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           loading="lazy"
         />
-        <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-transparent" />
-        <div class="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 md:p-8">
-          <p class="text-sm font-medium text-white/80">
-            {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
-          </p>
-          <p class="max-w-xl text-h3 leading-snug font-semibold text-balance text-white md:text-h2">
-            {pick(lang, data.result)}
-          </p>
-          <span class="mt-1 inline-flex items-center gap-1.5 font-medium text-white">
-            <span class="group-hover:underline">{dict.cases.open}</span>
-            <span class="transition-transform group-hover:translate-x-0.5">→</span>
-          </span>
+        <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/35 to-transparent" />
+        <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/10 to-transparent" />
+        <div class="absolute inset-0 flex items-end">
+          <div class="max-w-md p-6 md:max-w-lg md:p-8">
+            <p class="text-sm font-medium text-white/80">
+              {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
+            </p>
+            <p class="mt-1.5 text-[1.75rem] leading-tight font-semibold text-balance text-white md:text-[2rem]">
+              {pick(lang, data.result)}
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-semibold text-accent shadow-sm">
+              {dict.cases.open}
+              <span class="transition-transform group-hover:translate-x-0.5">→</span>
+            </span>
+          </div>
         </div>
       </div>
       <a href={href} class={coverLink} aria-label={`${dict.cases.open}: ${data.business.name}`} />
@@ -56,7 +59,7 @@ const coverLink =
           alt={data.business.name}
           widths={[400, 640, 900]}
           sizes="(min-width: 640px) 50vw, 100vw"
-          class="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+          class="aspect-[2/1] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
           loading="lazy"
         />
         <div
@@ -64,7 +67,7 @@ const coverLink =
           class="absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         />
       </div>
-      <div class="flex grow flex-col gap-2 p-5">
+      <div class="flex grow flex-col gap-1.5 p-4">
         <p class="text-sm font-medium text-muted">
           {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
         </p>
@@ -72,7 +75,7 @@ const coverLink =
         <p class="text-sm text-muted">{data.business.name}</p>
         <span
           aria-hidden="true"
-          class="mt-auto inline-flex items-center gap-1.5 pt-2 font-medium text-accent"
+          class="mt-auto inline-flex items-center gap-1.5 pt-3 font-medium text-accent"
         >
           <span class="group-hover:underline">{dict.cases.open}</span>
           <span class="transition-transform group-hover:translate-x-0.5">→</span>

@@ -73,23 +73,23 @@ const en: typeof uk = {
   process: {
     kicker: 'The process',
     title: 'How it works',
-    sub: 'Four steps. I handle the heavy lifting. You just need a short call and some material about your business.',
+    sub: 'Four simple steps. I handle the bulk of the work; from you I need a short call, materials and sign-off.',
     steps: [
       {
-        title: 'A call, 30 minutes',
-        text: 'Free. You tell me about your business. I tell you honestly whether a website will help, what it will cost and when it will be ready.',
+        title: 'A short call',
+        text: 'We talk through your business, the goal, the timeline and the price.',
       },
       {
-        title: 'The words',
-        text: 'I dig into why customers choose you and write copy that gets it across. All I need from you is answers to a few questions.',
+        title: 'Structure and copy',
+        text: 'I plan the pages and write clear copy about your services.',
       },
       {
         title: 'Design and build',
-        text: "You see the website as it takes shape and tell me what works and what doesn't.",
+        text: 'You see the site as it takes shape and sign off on the key decisions.',
       },
       {
-        title: 'Launch',
-        text: 'I connect the domain, test everything on a phone and go live. Then free tweaks after launch.',
+        title: 'Testing and launch',
+        text: 'I connect the domain, test the site on phone and desktop, and go live.',
       },
     ],
   },
