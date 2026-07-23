@@ -5,14 +5,14 @@ const en: typeof uk = {
   meta: {
     title: `${SITE.nameEn} ${SITE.surnameEn}. Websites that bring local businesses customers`,
     description:
-      'Websites for car services, salons, clinics and other local businesses, built to turn Google and social searches into calls and bookings. Usually ready in about two weeks.',
+      'Websites for car services, salons, clinics and other local businesses, built to turn Google and social searches into calls and bookings. Usually ready from 7 days.',
   },
 
   nav: {
     cases: 'Work',
     price: 'Pricing',
     how: 'How it works',
-    cta: 'Message me on Telegram',
+    cta: 'Discuss your site',
   },
 
   langSwitch: { label: 'Language', short: 'UA', full: 'Українська', target: 'uk' as 'uk' | 'en' },
@@ -21,11 +21,11 @@ const en: typeof uk = {
     status: 'Taking on new projects',
     h1a: 'Your customers are on Google right now.',
     h1b: "They're finding your competitors.",
-    sub: 'I build websites for salons, clinics, car shops and other local businesses that want more calls and bookings from Google and social media.',
-    cta: 'Message me on Telegram',
+    sub: 'I build websites for local businesses that turn visits from Google and social media into calls and bookings.',
+    cta: 'Discuss your site',
     secondaryCta: 'See my work',
     trust: 'I reply personally, usually within the hour.',
-    chips: ['I reply personally', 'Live in ~2 weeks', 'Price locked before we start', '9+ years in web development'],
+    chips: ['I reply personally', 'Launch from 7 days', 'Price locked before we start', 'Support after launch'],
     photoAlt: `${SITE.nameEn} ${SITE.surnameEn}, photo`,
     notif: ['New booking: Olena, cleaning, tomorrow 10:00', 'Telegram: "Hi, any slots on Saturday?"'],
   },
@@ -58,12 +58,12 @@ const en: typeof uk = {
       'A design that looks professional and works just as well on a phone as on a laptop.',
       'Call, Telegram and booking buttons. Reaching you takes one tap.',
       'Full launch: domain, setup, testing on every screen.',
-      'Two weeks of free tweaks after launch.',
+      'Free tweaks after launch.',
     ],
     price: SITE.priceEn,
     priceNote:
       'Most sites land between $500 and $900 depending on scope. I give you the exact number after a short call and lock it in before we start. No extra charges along the way.',
-    time: 'Usually ready in about two weeks.',
+    time: 'Usually ready from 7 days.',
     timeCaveat:
       'Bigger or unusual projects are scoped separately: a short call first, then a clear timeline and price.',
     guarantee: 'Revisions to the agreed result are included in the price.',
@@ -94,7 +94,7 @@ const en: typeof uk = {
       },
       {
         title: 'Launch',
-        text: 'I connect the domain, test everything on a phone and go live. Then two weeks of free tweaks.',
+        text: 'I connect the domain, test everything on a phone and go live. Then free tweaks after launch.',
       },
     ],
   },
@@ -115,7 +115,7 @@ const en: typeof uk = {
       },
       {
         q: 'How long does it take?',
-        a: 'Usually two weeks from the first call to launch. If the project is bigger than standard, I tell you the timeline upfront.',
+        a: 'A simple site can launch in about 7 days. The exact timeline depends on scope, how ready your materials are, and how fast we sign off on things.',
       },
       {
         q: "What if I don't like it?",
@@ -152,19 +152,20 @@ const en: typeof uk = {
   },
 
   final: {
-    kicker: 'Next step',
+    // title + cta are also used in the CTA banner at the bottom of a case page
     title: 'Your customers are searching every day. The only question is who they find.',
-    sub: "Message me on Telegram, or leave your number and I'll call you back.",
     cta: 'Message me on Telegram',
-    or: 'or',
+    contactKicker: "Let's talk about your site",
+    contactTitle: 'Tell me a bit about your business and what you need',
+    contactText: "Message me on whichever messenger suits you, or leave a request. I'll reply personally and point you to where to start.",
+    messengersNote: 'I reply personally, no managers or middlemen.',
     form: {
       name: 'Name',
-      phone: 'Phone',
-      biz: 'What does your business do',
-      submit: 'Send request',
+      contact: 'How to reach you',
+      biz: 'Type of business',
+      task: 'What you need done',
+      submit: 'Discuss your site',
     },
-    call: 'Prefer to call?',
-    trust: "No commitment. It's just a conversation.",
     notif: 'New request from your site',
   },
 

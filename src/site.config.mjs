@@ -12,8 +12,10 @@ export const SITE = {
   nameEn: 'Roman',
   surnameEn: 'Lozynskyi',
 
-  // TODO: посилання на ваш Telegram
+  // TODO: посилання на ваші месенджери. Порожній рядок ('') — кнопку не показуємо.
   telegram: 'https://t.me/USERNAME',
+  whatsapp: 'https://wa.me/380000000000',
+  viber: 'viber://chat?number=%2B380000000000',
 
   // TODO: телефон (як показувати і як дзвонити). Поки порожньо — кнопки дзвінка на сайті сховані,
   // щоб не показувати відвідувачам заглушку замість номера.

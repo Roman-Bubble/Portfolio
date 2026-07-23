@@ -38,7 +38,7 @@ const initials = lang === 'en' ? `${SITE.nameEn[0]}${SITE.surnameEn[0]}` : `${SI
 
     <div class="flex items-center gap-3">
       <LangSwitch lang={lang} />
-      <a href={SITE.telegram} class="btn btn-primary hidden px-5 py-2.5 text-sm sm:inline-flex">
+      <a href={`${home}#contact`} class="btn btn-primary hidden px-5 py-2.5 text-sm sm:inline-flex">
         {dict.nav.cta}
       </a>
     </div>

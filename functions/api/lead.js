@@ -20,14 +20,17 @@ export async function onRequestPost({ request, env }) {
   }
 
   const name = clean(form.get('name'), 100);
-  const phone = clean(form.get('phone'), 30);
+  // Поле phone тепер вільне «як з вами зв'язатися» (телефон, @нік у месенджері тощо).
+  const phone = clean(form.get('phone'), 100);
   const biz = clean(form.get('biz'), 200);
+  const task = clean(form.get('task'), 600);
 
   const text = [
     '🔔 Нова заявка з сайту',
     `Ім'я: ${name}`,
-    `Телефон: ${phone}`,
-    biz ? `Бізнес: ${biz}` : null,
+    `Звʼязок: ${phone}`,
+    biz ? `Тип бізнесу: ${biz}` : null,
+    task ? `Завдання: ${task}` : null,
     `Мова сторінки: ${lang}`,
   ]
     .filter(Boolean)

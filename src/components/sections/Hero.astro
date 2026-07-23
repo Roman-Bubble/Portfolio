@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import { SITE } from '../../site.config.mjs';
 import { t, type Lang } from '../../i18n';
 
 interface Props {
@@ -25,6 +24,7 @@ const notifs = dict.hero.notif.map((line) => {
 });
 
 const homeCases = lang === 'en' ? '/en/#cases' : '/#cases';
+const homeContact = lang === 'en' ? '/en/#contact' : '/#contact';
 ---
 
 <section id="hero" class="relative overflow-hidden">
@@ -57,7 +57,7 @@ const homeCases = lang === 'en' ? '/en/#cases' : '/#cases';
       <div
         class:list={['reveal mt-9 flex flex-col gap-3 sm:flex-row', !photo ? 'justify-center' : 'sm:items-center']}
       >
-        <a href={SITE.telegram} class="btn btn-primary px-8 py-4 text-lg">
+        <a href={homeContact} class="btn btn-primary px-8 py-4 text-lg">
           {dict.hero.cta}
           <span aria-hidden="true" class="btn-arrow">→</span>
         </a>
