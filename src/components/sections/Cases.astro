@@ -29,10 +29,10 @@ const rowB = rest.slice(2);
     {featured && <CaseCard lang={lang} entry={featured} />}
     {/* Дзеркальна асиметрія на desktop: 55/45, потім 45/55. Tablet — 50/50, mobile — 1 колонка. */}
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
-      {rowA.map((entry) => <CaseCard lang={lang} entry={entry} />)}
+      {rowA.map((entry, i) => <CaseCard lang={lang} entry={entry} wide={i === 0} />)}
     </div>
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-[minmax(0,9fr)_minmax(0,11fr)]">
-      {rowB.map((entry) => <CaseCard lang={lang} entry={entry} />)}
+      {rowB.map((entry, i) => <CaseCard lang={lang} entry={entry} wide={i === 1} />)}
     </div>
   </div>
 </section>
