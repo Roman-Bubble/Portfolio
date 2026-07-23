@@ -153,7 +153,7 @@ const en: typeof uk = {
   final: {
     // title + cta are also used in the CTA banner at the bottom of a case page
     title: 'Your customers are searching every day. The only question is who they find.',
-    cta: 'Message me on Telegram',
+    cta: 'Discuss your site',
     contactKicker: "Let's talk about your site",
     contactTitle: 'Tell me a bit about your business and what you need',
     contactText: "Message me on whichever messenger suits you, or leave a request. I'll reply personally and point you to where to start.",

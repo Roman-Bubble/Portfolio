@@ -21,26 +21,35 @@ gallery: ['./shot-1.jpg', './shot-2.jpg']
 
 problem:
   ua: >
-    Класика ніші: запис через Direct, ціни «в особисті», майстрів видно
-    лише в стрічці. Нова клієнтка не знає, скільки коштує процедура і до
-    кого вона потрапить, тому йде туди, де все видно одразу.
+    У багатьох студіях запис ведеться через Direct, ціни надсилаються в
+    особисті повідомлення, а інформація про майстрів губиться серед
+    дописів і сторіс. Новій клієнтці складно швидко зрозуміти вартість і
+    тривалість процедури та вибрати спеціаліста. Чим більше інформації
+    потрібно уточнювати в повідомленнях, тим легше втратити клієнтку ще
+    до запису.
   en: >
-    The classic story in beauty: bookings through DMs, prices "sent
-    privately", the stylists visible only in the feed. A new client can't
-    see what a treatment costs or whose hands she'll end up in, so she
-    goes where everything is visible upfront.
+    In many studios booking happens through DMs, prices are sent in
+    private messages, and information about the stylists gets lost among
+    posts and stories. A new client struggles to quickly work out the
+    price and length of a treatment or to choose a specialist. The more
+    she has to clarify in messages, the easier it is to lose her before
+    she books.
 
 solution:
   ua: >
-    Сторінка зібрана як журнальна редакція про студію: послуги з цінами
-    і тривалістю, майстри з обличчями й досвідом, студія зсередини.
-    Записатися можна онлайн у кілька дотиків, а знижка на перший візит
-    забирає останній сумнів.
+    Сайт збирає в одному місці послуги, актуальні ціни, тривалість
+    процедур, профілі майстрів, їхній досвід і фотографії студії.
+    Клієнтка може самостійно вибрати процедуру та спеціаліста й одразу
+    перейти до онлайн-запису. Знижка на перший візит допомагає новій
+    клієнтці легше зважитися на запис, а адміністратору доводиться рідше
+    повторювати однакові відповіді в Direct.
   en: >
-    The page reads like a magazine feature about the studio: services
-    with prices and duration, the artists shown by face and experience,
-    the space itself. Booking takes a few taps online, and a first-visit
-    discount removes the last bit of doubt.
+    The site gathers services, current prices, treatment durations,
+    stylist profiles, their experience and photos of the studio in one
+    place. A client can choose a treatment and a specialist herself and
+    go straight to online booking. A first-visit discount makes it easier
+    for a new client to decide, and the front desk repeats the same
+    answers in DMs far less often.
 
 result:
   ua: 'Ціни, майстри та онлайн-запис'

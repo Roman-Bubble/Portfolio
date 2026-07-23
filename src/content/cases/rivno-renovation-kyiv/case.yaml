@@ -21,27 +21,36 @@ gallery: ['./shot-1.jpg', './shot-2.jpg']
 
 problem:
   ua: >
-    У ремонті клієнт від початку чекає обману: кошторис виросте вдвічі,
-    строки попливуть, бригада зникне з авансом. Тому рішення ухвалюють
-    місяцями і шукають «по знайомству», а не за якістю роботи.
+    У ремонті головний бар'єр — недовіра. Клієнт боїться непередбаченого
+    збільшення кошторису, затримок і відсутності відповідальності після
+    отримання авансу. Через це рішення відкладають, довго порівнюють
+    пропозиції та часто вибирають виконавця за рекомендацією, навіть не
+    маючи чіткого розуміння умов роботи.
   en: >
-    In renovation the client expects to be cheated from day one: the
-    estimate doubles, deadlines slip, the crew vanishes with the advance.
-    So decisions take months and people hire "a friend of a friend"
-    instead of the best crew.
+    In renovation the main barrier is distrust. The client fears an
+    unexpected jump in the estimate, delays and a lack of accountability
+    once the deposit is paid. So decisions get postponed, offers are
+    compared for a long time, and people often pick a contractor on a
+    recommendation without a clear understanding of the terms.
 
 solution:
   ua: >
-    Сайт побудований на цифрах і договорі: калькулятор рахує кошторис за
-    площею і рівнем опорядження, оплата йде етапами після приймання
-    кожного, пеня за прострочення прописана прямо на сторінці. Окрема
-    таблиця чесно порівнює компанію з бригадою за оголошенням.
+    Сайт переводить розмову зі страхів на конкретні цифри й умови.
+    Калькулятор формує попередній кошторис залежно від площі та рівня
+    опорядження. Оплата розбита на етапи й відбувається після приймання
+    кожного з них, а пеня за прострочення відкрито прописана на сторінці.
+    Окрема таблиця порівнює роботу компанії за договором і поетапною
+    оплатою з роботою приватної бригади. Ще до заявки клієнт розуміє
+    бюджет, порядок роботи та відповідальність сторін.
   en: >
-    The site is built on numbers and a contract: a calculator prices the
-    job by area and finish level, payment goes stage by stage after each
-    one is accepted, and the late-penalty clause is printed right on the
-    page. A comparison table honestly stacks the company against a
-    classifieds crew.
+    The site shifts the conversation from fears to concrete numbers and
+    terms. A calculator builds a preliminary estimate based on area and
+    finish level. Payment is split into stages and happens after each one
+    is accepted, and the late penalty is stated openly on the page. A
+    separate table compares working with the company under a contract and
+    staged payment against a private crew. Before sending a request, the
+    client understands the budget, the order of work and each side's
+    responsibilities.
 
 result:
   ua: 'Кошторис і заявка на замір'

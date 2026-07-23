@@ -22,29 +22,37 @@ gallery: ['./shot-1.jpg', './shot-2.jpg']
 
 problem:
   ua: >
-    Детейлінг зазвичай продають словами «блиск, як з салону», і клієнт
-    не розуміє, за що платить 15 чи 35 тисяч. Половина звернень
-    починається і закінчується питанням «скільки коштує?», а власник
-    щовечора пояснює одне й те саме в месенджері.
+    Детейлінг продає не просто блиск автомобіля, а професійний захист,
+    результат якого клієнту складно оцінити до замовлення. Коли один
+    пакет коштує 15 тисяч, а інший 35 тисяч, половина звернень зводиться
+    до питань про ціну та різницю між послугами. Власнику доводиться
+    щодня повторювати ті самі пояснення, а частина клієнтів іде, так і
+    не зрозумівши цінність пропозиції.
   en: >
-    Detailing is usually sold with "showroom shine" promises, so the
-    customer has no idea why the price is 15 or 35 thousand. Half of the
-    inquiries start and end with "how much?", and the owner spends every
-    evening typing the same explanation into a messenger.
+    Detailing sells more than a shiny car — it sells professional
+    protection whose value is hard to judge before booking. When one
+    package is 15 thousand and another 35, half the inquiries come down
+    to questions about price and the difference between services. The
+    owner ends up repeating the same explanations every day, and some
+    customers leave without ever understanding what they'd be paying for.
 
 solution:
   ua: >
-    Сайт відповідає на питання про гроші сам: калькулятор рахує вартість
-    за розміром авто і пакетом, поруч чесне пояснення, чому кераміка
-    коштує стільки, і письмова гарантія на 5 років. Слайдер «до/після»
-    показує різницю краще за будь-який текст, а бронювання слота займає
-    хвилину.
+    Сайт бере основні пояснення на себе. Калькулятор показує вартість
+    залежно від розміру авто та пакета, а поруч зрозуміло пояснено склад
+    послуги й різницю між варіантами. Письмова гарантія на 5 років додає
+    впевненості перед дорогим замовленням, слайдер «до/після» демонструє
+    результат, а забронювати час можна приблизно за хвилину. У месенджер
+    клієнт переходить уже з розумінням вартості, вибраного пакета та
+    того, як записатися.
   en: >
-    The site answers the money question itself: a calculator prices the
-    job by car size and package, next to a plain-words explanation of why
-    ceramic coating costs what it costs, backed by a written 5-year
-    warranty. A before/after slider shows the difference better than any
-    copy, and booking a slot takes a minute.
+    The site takes the main explaining off the owner's hands. A
+    calculator shows the price by car size and package, with a clear
+    breakdown of what each service includes and how the options differ.
+    A written 5-year warranty adds confidence before an expensive job, a
+    before/after slider shows the result, and booking a slot takes about
+    a minute. By the time a customer opens the messenger, they already
+    understand the price, the package they want and how to book.
 
 result:
   ua: 'Розрахунок вартості та онлайн-запис'

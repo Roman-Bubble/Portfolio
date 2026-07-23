@@ -21,27 +21,33 @@ gallery: ['./shot-1.jpg', './shot-2.jpg']
 
 problem:
   ua: >
-    Люди роками відкладають візит до стоматолога не тому, що не болить,
-    а тому, що страшно і незрозуміло, у скільки це виллється. Типовий
-    сайт клініки з сухим переліком послуг цей страх лише підсилює.
+    Люди часто відкладають лікування через страх болю, невідомий бюджет
+    і недовіру до лікаря. Типовий сайт із переліком процедур не
+    відповідає на головні запитання: хто лікуватиме, як проходитиме
+    прийом і скільки коштуватиме лікування.
   en: >
-    People put off the dentist for years not because nothing hurts, but
-    because it's scary and nobody tells them what it will end up costing.
-    A typical clinic site with a dry list of services only feeds that
-    fear.
+    People often put off treatment out of fear of pain, an unknown budget
+    and distrust of the dentist. A typical site with a list of procedures
+    answers none of the real questions: who will treat you, how the visit
+    will go, and what the treatment will cost.
 
 solution:
   ua: >
-    Кожна секція знімає один страх: «без болю» пояснено по-людськи, ціни
-    видно ще до крісла, план лікування з сумою, яка не змінюється, лікарі
-    з іменами й досвідом. Перший крок навмисно маленький: безкоштовний
-    огляд і план, без зобовʼязань.
+    Сайт відповідає на основні запитання ще до першого дзвінка. На сайті
+    просто пояснено, як клініка зменшує дискомфорт під час лікування,
+    ціни доступні до запису, а план лікування показує погоджену
+    вартість, яка не змінюється без попереднього узгодження з пацієнтом.
+    Окремо представлені лікарі, їхній досвід і спеціалізація. Перший крок
+    максимально простий: безкоштовний огляд і план лікування без
+    зобовʼязань.
   en: >
-    Every section disarms one fear: "pain-free" explained in human words,
-    prices visible before you're anywhere near the chair, a treatment
-    plan with a price that doesn't change, doctors with names and
-    experience. The first step is deliberately small: a free check-up and
-    a plan, no strings attached.
+    The site answers the main questions before the first call. It
+    explains plainly how the clinic reduces discomfort during treatment,
+    prices are available before booking, and the treatment plan shows an
+    agreed cost that doesn't change without discussing it with the patient
+    first. The doctors, their experience and specialisation are shown
+    separately. The first step is as easy as possible: a free check-up and
+    treatment plan, no obligations.
 
 result:
   ua: 'Ціни, лікарі та онлайн-запис'

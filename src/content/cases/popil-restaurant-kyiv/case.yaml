@@ -21,25 +21,32 @@ gallery: ['./shot-1.jpg', './shot-2.jpg']
 
 problem:
   ua: >
-    Ресторану з характером мало сторінки з меню і телефоном: гість обирає
-    не страву, а вечір. Якщо сайт не передає атмосферу, вибір програється
-    закладам з гарнішою стрічкою в Instagram.
+    Для ресторану з характером недостатньо показати лише меню й номер
+    телефону. Перед бронюванням гість оцінює атмосферу, кухню, формат
+    вечора та простір. Якщо сайт цього не передає, заклад може програти
+    конкурентам, які переконливіше презентують себе онлайн.
   en: >
-    A restaurant with character needs more than a menu and a phone
-    number: guests choose an evening, not a dish. If the site doesn't
-    carry the atmosphere, the booking goes to whoever has the prettier
-    Instagram feed.
+    For a restaurant with character, a menu and a phone number aren't
+    enough. Before booking, a guest weighs the atmosphere, the food, the
+    format of the evening and the space. If the site doesn't convey this,
+    the venue can lose out to competitors who present themselves more
+    convincingly online.
 
 solution:
   ua: >
-    Сайт веде гостя як дегустація: історія живого вогню, меню чотирма
-    главами, шеф зі своєю філософією, зала в присмерку. Бронювання столу
-    у два поля, дегустаційний сет підказує, з чого почати знайомство.
+    Сайт послідовно знайомить гостя з концепцією ресторану: історією
+    живого вогню, меню з чотирьох глав, філософією шефа й атмосферою
+    залу. Дегустаційний сет допомагає новому гостю зрозуміти, з чого
+    почати знайомство з кухнею. Форма бронювання складається лише з двох
+    полів, тому гість може одразу перейти до бронювання, не шукаючи
+    контакти на інших сторінках.
   en: >
-    The site walks the guest through like a tasting: the story of live
-    fire, a menu in four chapters, the chef and his philosophy, the dining
-    room at dusk. Reserving a table takes two fields, and the tasting set
-    suggests where to start.
+    The site walks the guest through the restaurant's concept step by
+    step: the story of live fire, a menu in four chapters, the chef's
+    philosophy and the mood of the dining room. A tasting set helps a new
+    guest figure out where to start. The booking form has just two
+    fields, so a guest can reserve right away without hunting for contacts
+    on other pages.
 
 result:
   ua: 'Атмосфера та бронювання столу'
