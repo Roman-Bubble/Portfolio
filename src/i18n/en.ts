@@ -46,33 +46,28 @@ const en: typeof uk = {
   offer: {
     kicker: 'The offer',
     title: 'What you get',
-    name: 'A website that brings customers',
+    name: 'A website for local business',
     priceLabel: 'Turnkey website',
     priceMeta: 'one-time',
     scope:
-      'One page with everything that convinces a customer to choose you: services, prices, photos, reviews and an easy booking button. Need more pages or specific features? We scope that together.',
+      'Services, prices, photos, reviews and an easy way to book, all in one place. Extra pages and features are quoted separately.',
     includes: "What's included",
     bullets: [
-      'A half-hour talk about your business. Then I take it from there.',
-      'Clear copy about your services and what makes you worth choosing, in your own words, no template filler.',
-      'A design that looks professional and works just as well on a phone as on a laptop.',
-      'Call, Telegram and booking buttons. Reaching you takes one tap.',
-      'Full launch: domain, setup, testing on every screen.',
-      'Free tweaks after launch.',
+      'A short call about your business',
+      'Structure and copy',
+      'Design for phone and desktop',
+      'Call and messenger buttons',
+      'Domain setup and launch',
+      'Revisions within the agreed scope',
     ],
     price: SITE.priceEn,
-    priceNote:
-      'Most sites land between $500 and $900 depending on scope. I give you the exact number after a short call and lock it in before we start. No extra charges along the way.',
-    time: 'Usually ready from 7 days.',
-    timeCaveat:
-      'Bigger or unusual projects are scoped separately: a short call first, then a clear timeline and price.',
-    guarantee: 'Revisions to the agreed result are included in the price.',
+    time: 'A simple site can launch from 7 days. We agree the exact timeline and price before work starts.',
     care: {
       title: 'Care plan',
-      text: 'Your website keeps working: hosting, updated prices and services, small changes. Cancel anytime.',
+      text: 'Hosting, price and service updates, small changes and help with your site.',
       price: SITE.careEn,
     },
-    cta: 'Talk about my business',
+    cta: 'Discuss your site',
   },
 
   process: {

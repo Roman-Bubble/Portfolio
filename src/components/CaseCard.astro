@@ -13,65 +13,72 @@ const dict = t(lang);
 const { data } = entry;
 const featured = data.featured;
 const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
+
+const cardShell =
+  'reveal group relative overflow-hidden rounded-3xl border border-line shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] focus-within:-translate-y-1.5 focus-within:shadow-[var(--shadow-lift)]';
+const coverLink =
+  'absolute inset-0 z-10 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2';
 ---
 
-<article
-  class:list={[
-    'reveal group relative cursor-pointer overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] focus-within:-translate-y-1.5 focus-within:shadow-[var(--shadow-lift)]',
-    featured ? 'flex flex-col sm:col-span-2 md:grid md:grid-cols-2 md:items-stretch' : 'flex flex-col',
-  ]}
->
-  <div class:list={['relative overflow-hidden', featured && 'md:h-full']}>
-    <Image
-      src={data.cover}
-      alt={data.business.name}
-      widths={featured ? [640, 900, 1200] : [400, 640, 900]}
-      sizes={featured
-        ? '(min-width: 768px) 560px, 100vw'
-        : '(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw'}
-      class:list={[
-        'w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]',
-        featured ? 'aspect-video md:aspect-auto md:h-full md:min-h-[19rem]' : 'aspect-video',
-      ]}
-      loading="lazy"
-    />
-    <div
-      aria-hidden="true"
-      class="absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-    >
-    </div>
-  </div>
-  <div
-    class:list={[
-      'flex grow flex-col gap-3',
-      featured ? 'p-6 md:justify-center md:p-8' : 'p-6',
-    ]}
-  >
-    <p class="text-sm font-medium text-muted">
-      {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
-    </p>
-    <p
-      class:list={[
-        'flex items-start gap-2.5 leading-snug font-semibold text-balance',
-        featured ? 'text-h3 md:text-h2' : 'text-h3',
-      ]}
-    >
-      <span aria-hidden="true" class="mt-2 h-2 w-2 shrink-0 rounded-full bg-brass"></span>
-      <span>{pick(lang, data.result)}</span>
-    </p>
-    <p class="text-sm text-muted">{data.business.name}</p>
-    <span
-      aria-hidden="true"
-      class="mt-auto inline-flex items-center gap-1.5 pt-2 font-medium text-accent"
-    >
-      <span class="group-hover:underline">{dict.cases.open}</span>
-      <span class="transition-transform group-hover:translate-x-0.5">→</span>
-    </span>
-  </div>
-
-  <!-- Клікабельна вся картка: одне посилання перекриває її повністю -->
-  <a
-    href={href}
-    class="absolute inset-0 z-10 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-    aria-label={`${dict.cases.open}: ${data.business.name}`}></a>
-</article>
+{
+  featured ? (
+    <article class:list={[cardShell, 'cursor-pointer sm:col-span-2']}>
+      <div class="relative aspect-[4/3] sm:aspect-[16/7]">
+        <Image
+          src={data.cover}
+          alt={data.business.name}
+          widths={[768, 1100, 1600]}
+          sizes="(min-width: 1024px) 1120px, 100vw"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+        <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-transparent" />
+        <div class="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 md:p-8">
+          <p class="text-sm font-medium text-white/80">
+            {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
+          </p>
+          <p class="max-w-xl text-h3 leading-snug font-semibold text-balance text-white md:text-h2">
+            {pick(lang, data.result)}
+          </p>
+          <span class="mt-1 inline-flex items-center gap-1.5 font-medium text-white">
+            <span class="group-hover:underline">{dict.cases.open}</span>
+            <span class="transition-transform group-hover:translate-x-0.5">→</span>
+          </span>
+        </div>
+      </div>
+      <a href={href} class={coverLink} aria-label={`${dict.cases.open}: ${data.business.name}`} />
+    </article>
+  ) : (
+    <article class:list={[cardShell, 'flex cursor-pointer flex-col bg-card']}>
+      <div class="relative overflow-hidden">
+        <Image
+          src={data.cover}
+          alt={data.business.name}
+          widths={[400, 640, 900]}
+          sizes="(min-width: 640px) 50vw, 100vw"
+          class="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+          loading="lazy"
+        />
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        />
+      </div>
+      <div class="flex grow flex-col gap-2 p-5">
+        <p class="text-sm font-medium text-muted">
+          {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
+        </p>
+        <p class="text-h3 leading-snug font-semibold text-balance">{pick(lang, data.result)}</p>
+        <p class="text-sm text-muted">{data.business.name}</p>
+        <span
+          aria-hidden="true"
+          class="mt-auto inline-flex items-center gap-1.5 pt-2 font-medium text-accent"
+        >
+          <span class="group-hover:underline">{dict.cases.open}</span>
+          <span class="transition-transform group-hover:translate-x-0.5">→</span>
+        </span>
+      </div>
+      <a href={href} class={coverLink} aria-label={`${dict.cases.open}: ${data.business.name}`} />
+    </article>
+  )
+}

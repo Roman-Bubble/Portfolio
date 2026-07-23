@@ -25,6 +25,6 @@ export const SITE = {
   // Ціни (укр. сторінка: грн, англ.: $)
   priceUa: 'від 18 000 грн',
   priceEn: 'from $500',
-  careUa: 'від 500 грн/міс',
-  careEn: 'from $15/mo',
+  careUa: 'від 500 грн/міс залежно від обсягу',
+  careEn: 'from $15/mo depending on scope',
 };

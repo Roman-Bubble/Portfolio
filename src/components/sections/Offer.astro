@@ -1,5 +1,4 @@
 ---
-import { SITE } from '../../site.config.mjs';
 import { t, type Lang } from '../../i18n';
 
 interface Props {
@@ -8,6 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const dict = t(lang);
+const homeContact = lang === 'en' ? '/en/#contact' : '/#contact';
 ---
 
 <section id="offer" class="relative scroll-mt-24 overflow-hidden bg-accent-soft">
@@ -65,23 +65,16 @@ const dict = t(lang);
             }
           </ul>
 
-          <div class="mt-10 grid gap-5 border-t border-line pt-7">
-            <div>
-              <p class="font-medium">{dict.offer.time}</p>
-              <p class="mt-1 text-sm text-muted">{dict.offer.timeCaveat}</p>
-            </div>
-            <p class="text-sm text-muted">{dict.offer.priceNote}</p>
-            <p class="flex items-start gap-2.5 text-sm text-muted">
-              <svg viewBox="0 0 24 24" class="mt-0.5 h-[18px] w-[18px] shrink-0 text-brass" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-              {dict.offer.guarantee}
-            </p>
+          <div class="mt-10 flex items-start gap-2.5 border-t border-line pt-7 text-sm text-muted">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-[18px] w-[18px] shrink-0 text-brass" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            {dict.offer.time}
           </div>
 
           <div class="mt-9">
-            <a href={SITE.telegram} class="btn btn-primary w-full px-8 py-4 sm:w-auto">
+            <a href={homeContact} class="btn btn-primary w-full px-8 py-4 sm:w-auto">
               {dict.offer.cta}
               <span aria-hidden="true" class="btn-arrow">→</span>
             </a>

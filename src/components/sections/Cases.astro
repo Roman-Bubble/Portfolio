@@ -14,13 +14,13 @@ const cases = (await getCollection('cases', ({ data }) => data.published)).sort(
 );
 ---
 
-<section id="cases" class="mx-auto w-full max-w-6xl scroll-mt-24 px-5 pt-20 pb-14 md:px-8 md:pt-28 md:pb-16">
+<section id="cases" class="mx-auto w-full max-w-6xl scroll-mt-24 px-5 pt-16 pb-12 md:px-8 md:pt-20 md:pb-14">
   <div class="max-w-2xl">
     <span class="kicker reveal">{dict.cases.kicker}</span>
     <h2 class="reveal mt-4 text-h2 font-bold text-balance">{dict.cases.title}</h2>
     <p class="reveal mt-4 text-lead text-muted">{dict.cases.sub}</p>
   </div>
-  <div data-stagger="110" class="mt-12 grid gap-6 sm:grid-cols-2">
+  <div data-stagger="110" class="mt-10 grid gap-5 sm:grid-cols-2">
     {cases.map((entry) => <CaseCard lang={lang} entry={entry} />)}
   </div>
 </section>
