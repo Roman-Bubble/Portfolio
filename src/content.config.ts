@@ -14,6 +14,8 @@ const cases = defineCollection({
       published: z.boolean().default(true),
       // sample: true, це демо-кейс (бейдж "Зразок", відгук не показуємо)
       sample: z.boolean().default(false),
+      // featured: true, акцентна велика картка в сітці робіт (варто робити лише для одного кейса)
+      featured: z.boolean().default(false),
       order: z.number(),
       business: z.object({
         name: z.string(),

@@ -3,7 +3,7 @@
 
 published: true
 sample: false
-order: 3
+order: 1
 
 business:
   name: 'Стоматологія «Емаль»'
@@ -44,8 +44,8 @@ solution:
     a plan, no strings attached.
 
 result:
-  ua: 'Сайт знімає страх перед стоматологом: прозорі ціни, лікарі в обличчя і запис на безкоштовний огляд'
-  en: 'A site that disarms dental fear: clear prices, doctors by name, booking for a free first visit'
+  ua: 'Ціни, лікарі та простий запис на консультацію.'
+  en: 'Prices, doctors and easy booking for a consultation.'
 
 testimonial:
   quote:

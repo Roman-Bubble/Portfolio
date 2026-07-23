@@ -1,5 +1,4 @@
 ---
-import { SITE } from '../site.config.mjs';
 import { t, type Lang } from '../i18n';
 
 interface Props {
@@ -8,6 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const dict = t(lang);
+const homeContact = lang === 'en' ? '/en/#contact' : '/#contact';
 ---
 
 <!-- Мобільна кнопка знизу: з'являється, коли hero пішов з екрана -->
@@ -17,7 +17,7 @@ const dict = t(lang);
     class="glass fixed inset-x-0 bottom-0 z-40 hidden translate-y-0 border-t border-line/70 px-3 pt-3 shadow-[0_-10px_30px_-18px_rgba(10,47,36,0.4)]"
     style="padding-bottom: calc(0.75rem + env(safe-area-inset-bottom))"
   >
-    <a href={SITE.telegram} class="btn btn-primary w-full py-3.5">
+    <a href={homeContact} class="btn btn-primary w-full py-3.5">
       {dict.sticky.cta}
       <span aria-hidden="true" class="btn-arrow">→</span>
     </a>

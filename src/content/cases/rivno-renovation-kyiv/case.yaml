@@ -44,8 +44,8 @@ solution:
     classifieds crew.
 
 result:
-  ua: 'Калькулятор кошторису й наголос на договорі: клієнт рахує ремонт і замовляє замір'
-  en: 'A cost calculator and a contract-first message: the client prices the renovation and books a survey'
+  ua: 'Калькулятор кошторису та заявка на замір.'
+  en: 'A cost calculator and a request for a site survey.'
 
 testimonial:
   quote:

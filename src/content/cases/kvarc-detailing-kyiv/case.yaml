@@ -3,7 +3,8 @@
 
 published: true
 sample: false
-order: 1
+featured: true
+order: 3
 
 business:
   name: 'Студія детейлінгу KVARC'
@@ -46,8 +47,8 @@ solution:
     copy, and booking a slot takes a minute.
 
 result:
-  ua: 'Калькулятор вартості й онлайн-бронювання слота: клієнт рахує ціну сам і одразу займає час'
-  en: 'A price calculator and online slot booking: the customer prices the job and books on the spot'
+  ua: 'Розрахунок вартості та онлайн-бронювання без листування.'
+  en: 'Instant price estimate and online booking, no back-and-forth.'
 
 testimonial:
   quote:

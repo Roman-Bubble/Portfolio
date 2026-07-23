@@ -32,8 +32,8 @@ const en: typeof uk = {
 
   cases: {
     kicker: 'Work',
-    title: 'What a website that sells looks like',
-    sub: 'Five websites across different niches: beauty, auto, dental, renovation, dining. Each one solves the core job of its business. Yours will be about you, but the approach is the same.',
+    title: 'Websites built to solve specific business problems',
+    sub: 'Each site is built for its own job: show prices, simplify booking, calculate a quote, or help the customer decide faster.',
     open: 'View project',
     live: 'Open the site',
     problem: 'The situation',
@@ -161,18 +161,22 @@ const en: typeof uk = {
     messengersNote: 'I reply personally, no managers or middlemen.',
     form: {
       name: 'Name',
-      contact: 'How to reach you',
+      contact: 'Phone or Telegram',
       biz: 'Type of business',
+      bizPlaceholder: 'Salon, clinic, car service...',
       task: 'What you need done',
+      taskPlaceholder: 'Briefly describe the site or changes you need',
       submit: 'Discuss your site',
     },
     notif: 'New request from your site',
   },
 
-  sticky: { cta: 'Message me on Telegram' },
+  sticky: { cta: 'Discuss your site' },
 
   footer: {
     line: 'Websites that bring local businesses customers.',
+    navTitle: 'Navigation',
+    contactTitle: 'Contact',
   },
 
   thanks: {

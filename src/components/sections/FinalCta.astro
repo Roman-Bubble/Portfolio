@@ -9,7 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const dict = t(lang);
 const inputClass =
-  'rounded-xl border border-line bg-bg px-4 py-3 text-ink outline-none transition-[border-color,box-shadow] duration-200 focus:border-accent focus:ring-2 focus:ring-accent/25';
+  'rounded-xl border border-line bg-bg px-4 py-2.5 text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted/70 focus:border-accent focus:ring-2 focus:ring-accent/25';
 
 // Показуємо лише ті месенджери, для яких заповнене посилання в site.config.mjs.
 const messengers = [
@@ -42,15 +42,10 @@ const messengers = [
       {
         messengers.length > 0 && (
           <div class="reveal mt-8 flex flex-wrap gap-3">
-            {messengers.map((m, i) => (
+            {messengers.map((m) => (
               <a
                 href={m.href}
-                class:list={[
-                  'inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium transition-colors',
-                  i === 0
-                    ? 'btn btn-light'
-                    : 'border border-white/25 text-white hover:border-white/50 hover:bg-white/10',
-                ]}
+                class="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 font-medium text-white transition-colors hover:border-white/50 hover:bg-white/10"
               >
                 {m.label}
               </a>
@@ -66,28 +61,28 @@ const messengers = [
     <form
       method="POST"
       action="/api/lead"
-      class="reveal grid gap-3 rounded-[1.5rem] bg-card p-6 text-left shadow-[var(--shadow-lift)] md:p-7"
+      class="reveal grid gap-2.5 rounded-[1.5rem] bg-card p-6 text-left shadow-[var(--shadow-lift)] md:p-7"
     >
       <input type="hidden" name="lang" value={lang} />
       {/* Пастка для ботів: людина цього поля не бачить */}
       <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
-      <label class="grid gap-1.5">
+      <label class="grid gap-1">
         <span class="text-sm font-medium">{dict.final.form.name}</span>
         <input type="text" name="name" required maxlength="100" autocomplete="name" class={inputClass} />
       </label>
-      <label class="grid gap-1.5">
+      <label class="grid gap-1">
         <span class="text-sm font-medium">{dict.final.form.contact}</span>
         <input type="text" name="phone" required maxlength="100" class={inputClass} />
       </label>
-      <label class="grid gap-1.5">
+      <label class="grid gap-1">
         <span class="text-sm font-medium">{dict.final.form.biz}</span>
-        <input type="text" name="biz" maxlength="200" class={inputClass} />
+        <input type="text" name="biz" maxlength="200" placeholder={dict.final.form.bizPlaceholder} class={inputClass} />
       </label>
-      <label class="grid gap-1.5">
+      <label class="grid gap-1">
         <span class="text-sm font-medium">{dict.final.form.task}</span>
-        <textarea name="task" rows="3" maxlength="600" class={`${inputClass} resize-y`}></textarea>
+        <textarea name="task" rows="3" maxlength="600" placeholder={dict.final.form.taskPlaceholder} class={`${inputClass} resize-y`}></textarea>
       </label>
-      <button type="submit" class="btn btn-primary mt-2 px-7 py-3.5">{dict.final.form.submit}</button>
+      <button type="submit" class="btn btn-primary mt-1.5 px-7 py-3.5">{dict.final.form.submit}</button>
     </form>
   </div>
 </section>

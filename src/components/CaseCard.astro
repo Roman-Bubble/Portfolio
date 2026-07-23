@@ -11,19 +11,28 @@ interface Props {
 const { lang, entry } = Astro.props;
 const dict = t(lang);
 const { data } = entry;
+const featured = data.featured;
 const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
 ---
 
 <article
-  class="reveal group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] focus-within:-translate-y-1.5 focus-within:shadow-[var(--shadow-lift)]"
+  class:list={[
+    'reveal group relative cursor-pointer overflow-hidden rounded-3xl border border-line bg-card shadow-[var(--shadow-card)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] focus-within:-translate-y-1.5 focus-within:shadow-[var(--shadow-lift)]',
+    featured ? 'flex flex-col sm:col-span-2 md:grid md:grid-cols-2 md:items-stretch' : 'flex flex-col',
+  ]}
 >
-  <div class="relative overflow-hidden">
+  <div class:list={['relative overflow-hidden', featured && 'md:h-full']}>
     <Image
       src={data.cover}
       alt={data.business.name}
-      widths={[400, 640, 900]}
-      sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
-      class="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+      widths={featured ? [640, 900, 1200] : [400, 640, 900]}
+      sizes={featured
+        ? '(min-width: 768px) 560px, 100vw'
+        : '(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw'}
+      class:list={[
+        'w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]',
+        featured ? 'aspect-video md:aspect-auto md:h-full md:min-h-[19rem]' : 'aspect-video',
+      ]}
       loading="lazy"
     />
     <div
@@ -32,11 +41,21 @@ const href = lang === 'en' ? `/en/cases/${entry.id}/` : `/cases/${entry.id}/`;
     >
     </div>
   </div>
-  <div class="flex grow flex-col gap-3 p-6">
+  <div
+    class:list={[
+      'flex grow flex-col gap-3',
+      featured ? 'p-6 md:justify-center md:p-8' : 'p-6',
+    ]}
+  >
     <p class="text-sm font-medium text-muted">
       {pick(lang, data.business.niche)} · {pick(lang, data.business.city)}
     </p>
-    <p class="flex items-start gap-2.5 text-h3 leading-snug font-semibold text-balance">
+    <p
+      class:list={[
+        'flex items-start gap-2.5 leading-snug font-semibold text-balance',
+        featured ? 'text-h3 md:text-h2' : 'text-h3',
+      ]}
+    >
       <span aria-hidden="true" class="mt-2 h-2 w-2 shrink-0 rounded-full bg-brass"></span>
       <span>{pick(lang, data.result)}</span>
     </p>

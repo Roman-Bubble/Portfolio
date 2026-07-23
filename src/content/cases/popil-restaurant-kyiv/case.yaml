@@ -42,8 +42,8 @@ solution:
     suggests where to start.
 
 result:
-  ua: 'Атмосфера ресторану живого вогню з екрана і бронювання столу у два поля'
-  en: 'The atmosphere of an open-fire restaurant on screen, and table booking in two fields'
+  ua: 'Атмосфера закладу та бронювання столу.'
+  en: 'The venue’s atmosphere and table booking.'
 
 testimonial:
   quote:
