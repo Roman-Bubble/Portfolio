@@ -64,7 +64,7 @@ const en: typeof uk = {
     time: 'A simple site can launch from 7 days. We agree the exact timeline and price before work starts.',
     care: {
       title: 'Care plan',
-      text: 'Hosting, price and service updates, small changes and help with your site.',
+      text: 'Updates to prices, services, copy and photos, plus small changes on the site.',
       price: SITE.careEn,
     },
     cta: 'Discuss your site',
@@ -102,31 +102,35 @@ const en: typeof uk = {
 
   faq: {
     kicker: 'Questions',
-    title: 'The questions you’re asking yourself',
+    title: 'Frequently asked questions',
     items: [
       {
         q: 'How much does it cost?',
-        a: 'It depends on scope. Most sites land between $500 and $900. I give you the exact number after a short call, once I understand the job, and lock it in before we start. No charges added along the way.',
+        a: 'Most sites cost from $500. I give you the exact price after a short call and lock it in before work starts.',
       },
       {
         q: 'How long does it take?',
-        a: 'A simple site can launch in about 7 days. The exact timeline depends on scope, how ready your materials are, and how fast we sign off on things.',
+        a: 'A simple site can launch from 7 days. The timeline depends on scope, how ready your materials are, and how fast we sign off.',
       },
       {
-        q: "What if I don't like it?",
-        a: 'Revisions to the agreed result are included in the price while we build the site together. You never have to accept it "as is".',
+        q: "What if I don't like the result?",
+        a: 'We sign off on the site step by step. Revisions within the agreed structure are included in the price.',
       },
       {
         q: 'What do you need from me?',
-        a: 'A half-hour call, answers to a few questions, and photos of your business. I handle the rest.',
+        a: 'A short call, information about your business, photos, and sign-off on the main stages. I handle the bulk of the work.',
       },
       {
-        q: 'I already have Instagram. Why a website?',
-        a: 'Instagram is great for showing your work to people who already follow you. A website brings everything together in one place, strengthens how you show up on Google, and lets someone book right away instead of waiting for a DM reply. They work best together.',
+        q: 'Why a website if I have Instagram?',
+        a: 'Instagram shows your work and keeps you in touch with followers. A website gathers your services, prices and booking in one place. They work best together.',
       },
       {
-        q: 'What if I need something bigger?',
-        a: "Message me anyway. I'll look at what you actually need and tell you honestly. One page is often enough, and when it isn't, I quote the bigger project separately.",
+        q: 'What if I need extra pages or features?',
+        a: "We'll talk through the goal and quote the extra scope separately.",
+      },
+      {
+        q: 'What happens after launch?',
+        a: 'Domain setup and launch are included in the price. Further changes can be ordered separately or covered by ongoing support.',
       },
     ],
     more: "Didn't find your question?",

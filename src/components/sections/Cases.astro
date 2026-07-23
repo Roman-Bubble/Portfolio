@@ -12,6 +12,10 @@ const dict = t(lang);
 const cases = (await getCollection('cases', ({ data }) => data.published)).sort(
   (a, b) => a.data.order - b.data.order,
 );
+const featured = cases.find((c) => c.data.featured);
+const rest = cases.filter((c) => !c.data.featured);
+const rowA = rest.slice(0, 2);
+const rowB = rest.slice(2);
 ---
 
 <section id="cases" class="mx-auto w-full max-w-6xl scroll-mt-24 px-5 pt-16 pb-12 md:px-8 md:pt-20 md:pb-14">
@@ -20,7 +24,15 @@ const cases = (await getCollection('cases', ({ data }) => data.published)).sort(
     <h2 class="reveal mt-4 text-h2 font-bold text-balance">{dict.cases.title}</h2>
     <p class="reveal mt-4 text-lead text-muted">{dict.cases.sub}</p>
   </div>
-  <div data-stagger="110" class="mt-10 grid gap-5 sm:grid-cols-2">
-    {cases.map((entry) => <CaseCard lang={lang} entry={entry} />)}
+
+  <div data-stagger="110" class="mt-10 flex flex-col gap-5">
+    {featured && <CaseCard lang={lang} entry={featured} />}
+    {/* Дзеркальна асиметрія на desktop: 55/45, потім 45/55. Tablet — 50/50, mobile — 1 колонка. */}
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
+      {rowA.map((entry) => <CaseCard lang={lang} entry={entry} />)}
+    </div>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-[minmax(0,9fr)_minmax(0,11fr)]">
+      {rowB.map((entry) => <CaseCard lang={lang} entry={entry} />)}
+    </div>
   </div>
 </section>
