@@ -4,17 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Bilingual (Ukrainian/English) static portfolio site for a landing-page freelancer, built with Astro 5 + Tailwind CSS 4. No tests or linter are configured.
+Bilingual (Ukrainian/English) portfolio site for a landing-page freelancer, built with Astro 5 + Tailwind CSS 4, deployed on Vercel. No tests or linter are configured.
+
+Almost every page is prerendered to static HTML (`export const prerender = true` in each `src/pages/*.astro` file) — the one exception is the contact API route, which needs to run as a server function. This mixed mode requires `output: 'server'` + `@astrojs/vercel` in [astro.config.mjs](astro.config.mjs); don't remove either without also re-checking every page still opts into prerendering.
 
 ## Commands
 
 ```bash
 npm run dev       # dev server at http://localhost:4321
-npm run build     # static build to dist/
+npm run build     # build to dist/ (Vercel output goes to .vercel/output when built via the Vercel CLI/platform)
 npm run preview   # preview the build
 ```
 
-The contact form is a Cloudflare Pages Function ([functions/api/lead.js](functions/api/lead.js)) that sends leads to Telegram via `TG_BOT_TOKEN` / `TG_CHAT_ID` env vars. `npm run dev` does NOT run it (form POST returns 404 locally — expected). To test the form locally: `npm run build`, then `npx wrangler pages dev dist`.
+The contact form posts (via `fetch`, from a script in [FinalCta.astro](src/components/sections/FinalCta.astro)) to the Astro API route [src/pages/api/contact.ts](src/pages/api/contact.ts), which sends the lead to Telegram using the `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` env vars (set in Vercel → Project → Settings → Environment Variables). To test locally, put the same two vars in a `.env` file at the project root — `astro dev` picks them up and the route works normally.
 
 ## Architecture
 
@@ -42,7 +44,7 @@ Note the locale-code asymmetry: Astro locales are `'uk' | 'en'`, but localized Y
 
 - Theme colors and font are Tailwind 4 `@theme` tokens in [src/styles/global.css](src/styles/global.css) (`--color-accent`, `--color-bg`, etc.) — use those tokens, not raw hex.
 - Progressive enhancement: an inline script adds `.js` to `<html>`; scroll-reveal (`.reveal` class + IntersectionObserver in Layout.astro) only hides elements when JS is present, and respects `prefers-reduced-motion`. No-JS users see everything.
-- The lead form includes a hidden `company` honeypot field checked by the Pages Function.
+- The lead form includes a hidden `company` honeypot field checked by the API route, and shows inline loading/success/error state (no page redirect) via the script at the bottom of FinalCta.astro.
 
 ## Copy rules (from the case README — apply to any content you write)
 

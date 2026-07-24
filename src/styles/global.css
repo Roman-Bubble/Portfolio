@@ -187,6 +187,11 @@ h3 {
   transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out),
     background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
 }
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
 .btn-arrow {
   transition: transform 0.25s var(--ease-out);
 }
